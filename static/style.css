@@ -184,7 +184,9 @@ button:hover {
 }
 
 .scroll-card {
-    min-width: 180px;
+
+    min-width: 140px;
+
     background: linear-gradient(
         145deg,
         #111,
@@ -195,7 +197,9 @@ button:hover {
 
     border-radius: 20px;
 
-    padding: 15px;
+    padding: 10px;
+
+    font-size: 14px;
 
     flex-shrink: 0;
 
@@ -206,7 +210,6 @@ button:hover {
     box-shadow:
         0 0 15px rgba(0,0,0,0.4);
 }
-
 .scroll-card:hover {
 
     transform: translateY(-5px);
@@ -243,4 +246,89 @@ button:hover {
         transform: translateX(-50%);
     }
 
+}
+.hero-title {
+
+    font-size: 64px;
+
+    margin-bottom: 10px;
+
+    font-weight: bold;
+}
+
+.hero-subtitle {
+
+    color: #aaa;
+
+    font-size: 22px;
+
+    margin-bottom: 60px;
+}
+
+.active-count {
+
+    color: #aaa;
+
+    margin-bottom: 30px;
+}
+
+.scroll-card {
+
+    min-width: 160px;
+
+    padding: 15px;
+
+    border-radius: 25px;
+
+    background: linear-gradient(
+        145deg,
+        #111,
+        #090909
+    );
+
+    border: 1px solid #222;
+
+    text-align: center;
+}
+
+.scroll-card h2 {
+
+    font-size: 20px;
+
+    margin-top: 10px;
+}
+
+.scroll-card p {
+
+    font-size: 14px;
+
+    color: #ddd;
+}
+
+.win-text {
+
+    color: #00ff99 !important;
+
+    font-weight: bold;
+
+    margin-top: 15px;
+}
+
+.rate-text {
+
+    color: #00ff99 !important;
+
+    font-weight: bold;
+}
+
+.live-card {
+
+    margin-top: 60px;
+
+    padding: 40px;
+}
+
+.live-card h2 {
+
+    font-size: 42px;
 }
