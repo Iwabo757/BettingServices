@@ -34,6 +34,8 @@
 
     <div class="bet-scroll">
 
+    <div class="bet-track">
+
         {% for bet in bets %}
 
         <div class="scroll-card">
@@ -58,7 +60,34 @@
                 Amount:
                 ¥{{ "{:,.0f}".format(bet.bet_amount) }}
             </p>
+{% endfor %}
 
+{% for bet in bets %}
+
+<div class="scroll-card">
+
+    <img
+        src="https://img.pokemondb.net/sprites/home/shiny/{{ bet.title.lower() }}.png"
+        width="120"
+    >
+
+    <h2>{{ bet.title.title() }}</h2>
+
+    <p>
+        {{ bet.player }}
+    </p>
+
+    <p>
+        Target:
+        {{ "{:,}".format(bet.target_encounter) }}
+    </p>
+
+    <p>
+        Amount:
+        ¥{{ "{:,.0f}".format(bet.bet_amount) }}
+    </p>
+
+</div>
         </div>
 
         {% endfor %}
@@ -93,31 +122,6 @@ function toggleSidebar() {
         .toggle('active');
 
 }
-
-</script>
-
-<script>
-
-const scroller = document.querySelector('.bet-scroll');
-
-let scrollAmount = 0;
-
-setInterval(() => {
-
-    if (!scroller) return;
-
-    scrollAmount += 280;
-
-    if (scrollAmount >= scroller.scrollWidth) {
-        scrollAmount = 0;
-    }
-
-    scroller.scrollTo({
-        left: scrollAmount,
-        behavior: 'smooth'
-    });
-
-}, 3000);
 
 </script>
 

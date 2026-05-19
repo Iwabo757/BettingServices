@@ -141,11 +141,31 @@ button:hover {
 }
 
 .bet-scroll {
+
     display: flex;
+
     gap: 20px;
-    overflow-x: auto;
+
+    overflow: hidden;
+
     padding: 20px 0;
-    scroll-behavior: smooth;
+
+    width: 100%;
+
+    position: relative;
+
+}
+
+.bet-track {
+
+    display: flex;
+
+    gap: 20px;
+
+    width: max-content;
+
+    animation: scrollLoop 30s linear infinite;
+
 }
 
 .bet-scroll::-webkit-scrollbar {
@@ -205,4 +225,16 @@ button:hover {
 .hero-bets h1,
 .hero-bets p {
     text-align: center;
+}
+
+@keyframes scrollLoop {
+
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+
 }
