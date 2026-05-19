@@ -1,0 +1,27 @@
+<div class="sidebar">
+
+    <h2>Shiny Bets</h2>
+
+    <a href="/">Home</a>
+
+    <a href="/bets">Current Bets</a>
+
+    <a href="/history">Past Bets</a>
+
+    <a href="/leaderboard">Leaderboard</a>
+
+    {% if session.get('admin') %}
+
+        <a href="/analytics">Analytics</a>
+
+        <a href="/admin">Admin Dashboard</a>
+
+        <a href="/logout">Logout</a>
+
+    {% else %}
+
+        <a href="/login">Login</a>
+
+    {% endif %}
+
+</div>
