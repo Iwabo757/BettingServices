@@ -4,7 +4,8 @@ from flask_sqlalchemy import SQLAlchemy
 app = Flask(__name__)
 
 app.config['SECRET_KEY'] = 'supersecretkey'
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:C7SryYAIB9Lpo4rN@db.ebxdbkmnchebkbhihebr.supabase.co:5432/postgres'
+
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres.ebxdbkmnchebkbhihebr:C7SryYAIB9Lpo4rN@aws-1-us-east-1.pooler.supabase.com:6543/postgres'
 
 # DATABASE
 
