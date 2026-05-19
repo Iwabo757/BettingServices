@@ -40,13 +40,13 @@ body {
     color: #00ff99;
 }
 
+
 /* MAIN CONTENT */
 
 .main {
     margin-left: 280px;
     padding: 30px;
 }
-
 /* CARDS */
 
 .card {
@@ -85,6 +85,10 @@ button {
 
 button:hover {
     opacity: 0.9;
+}
+
+.home-main {
+    text-align: center;
 }
 
 /* MOBILE MENU BUTTON */
@@ -180,7 +184,7 @@ button:hover {
 }
 
 .scroll-card {
-    min-width: 260px;
+    min-width: 180px;
     background: linear-gradient(
         145deg,
         #111,
@@ -191,7 +195,7 @@ button:hover {
 
     border-radius: 20px;
 
-    padding: 20px;
+    padding: 15px;
 
     flex-shrink: 0;
 
