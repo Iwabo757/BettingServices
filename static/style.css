@@ -249,7 +249,7 @@ button:hover {
 }
 .hero-title {
 
-    font-size: 64px;
+    font-size: 42px;
 
     margin-bottom: 10px;
 
@@ -262,7 +262,7 @@ button:hover {
 
     font-size: 22px;
 
-    margin-bottom: 60px;
+    margin-bottom: 30px;
 }
 
 .active-count {
@@ -274,9 +274,9 @@ button:hover {
 
 .scroll-card {
 
-    min-width: 160px;
+    min-width: 140px;
 
-    padding: 15px;
+    padding: 10px;
 
     border-radius: 25px;
 
@@ -293,14 +293,14 @@ button:hover {
 
 .scroll-card h2 {
 
-    font-size: 20px;
+    font-size: 16px;
 
     margin-top: 10px;
 }
 
 .scroll-card p {
 
-    font-size: 14px;
+    font-size: 12px;
 
     color: #ddd;
 }
@@ -323,9 +323,9 @@ button:hover {
 
 .live-card {
 
-    margin-top: 60px;
+    margin-top: 25px;
 
-    padding: 40px;
+    padding: 20px;
 }
 
 .live-card h2 {
