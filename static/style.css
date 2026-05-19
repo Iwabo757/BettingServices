@@ -164,7 +164,9 @@ button:hover {
 
     width: max-content;
 
-    animation: scrollLoop 30s linear infinite;
+    animation: scrollLoop 60s linear infinite;
+
+    will-change: transform;
 
 }
 
