@@ -16,7 +16,56 @@
 <div class="main">
 
     <h1>Welcome to Shiny Bets</h1>
+<p style="
+    color:#999;
+    margin-top:-10px;
+    margin-bottom:30px;
+">
+    Predict shiny encounter milestones and win PokéYen payouts.
+</p>
 
+<div class="hero-bets">
+
+    <h1>Current Active Bets</h1>
+
+    <p>
+        {{ bets|length }} active bets running.
+    </p>
+
+    <div class="bet-scroll">
+
+        {% for bet in bets %}
+
+        <div class="scroll-card">
+
+            <img
+                src="https://img.pokemondb.net/sprites/home/shiny/{{ bet.title.lower() }}.png"
+                width="120"
+            >
+
+            <h2>{{ bet.title.title() }}</h2>
+
+            <p>
+                {{ bet.player }}
+            </p>
+
+            <p>
+                Target:
+                {{ "{:,}".format(bet.target_encounter) }}
+            </p>
+
+            <p>
+                Amount:
+                ¥{{ "{:,.0f}".format(bet.bet_amount) }}
+            </p>
+
+        </div>
+
+        {% endfor %}
+
+    </div>
+
+</div>
     <div class="card">
 
         <h2>Live Shiny Encounter Betting</h2>
@@ -32,13 +81,6 @@
 
     </div>
 
-    <div class="card">
-
-        <h2>Current Active Bets</h2>
-
-        <p>{{ bets|length }} active bets running.</p>
-
-    </div>
 
 </div>
 <script>
@@ -53,5 +95,31 @@ function toggleSidebar() {
 }
 
 </script>
+
+<script>
+
+const scroller = document.querySelector('.bet-scroll');
+
+let scrollAmount = 0;
+
+setInterval(() => {
+
+    if (!scroller) return;
+
+    scrollAmount += 280;
+
+    if (scrollAmount >= scroller.scrollWidth) {
+        scrollAmount = 0;
+    }
+
+    scroller.scrollTo({
+        left: scrollAmount,
+        behavior: 'smooth'
+    });
+
+}, 3000);
+
+</script>
+
 </body>
 </html>

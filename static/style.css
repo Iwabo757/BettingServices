@@ -133,4 +133,76 @@ button:hover {
         max-width: 100%;
         height: auto;
     }
+    }
+/* HERO BET SCROLLER */
+
+.hero-bets {
+    margin-bottom: 40px;
+}
+
+.bet-scroll {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    padding: 20px 0;
+    scroll-behavior: smooth;
+}
+
+.bet-scroll::-webkit-scrollbar {
+    height: 8px;
+}
+
+.bet-scroll::-webkit-scrollbar-thumb {
+    background: #00ff99;
+    border-radius: 10px;
+}
+
+.scroll-card {
+    min-width: 260px;
+    background: linear-gradient(
+        145deg,
+        #111,
+        #1a1a1a
+    );
+
+    border: 1px solid #333;
+
+    border-radius: 20px;
+
+    padding: 20px;
+
+    flex-shrink: 0;
+
+    text-align: center;
+
+    transition: 0.3s;
+
+    box-shadow:
+        0 0 15px rgba(0,0,0,0.4);
+}
+
+.scroll-card:hover {
+
+    transform: translateY(-5px);
+
+    border-color: #00ff99;
+
+    box-shadow:
+        0 0 20px rgba(0,255,153,0.4);
+}
+
+.scroll-card img {
+    margin-bottom: 10px;
+}
+
+.card img {
+
+    filter:
+        drop-shadow(0 0 15px rgba(0,255,153,0.4));
+
+}
+
+.hero-bets h1,
+.hero-bets p {
+    text-align: center;
 }
