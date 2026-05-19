@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Analytics</title>
+
+    <link rel="stylesheet" href="/static/style.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+<div class="sidebar">
+
+    <h2>Shiny Bets</h2>
+
+    <a href="/">Home</a>
+    <a href="/bets">Current Bets</a>
+    <a href="/history">Past Bets</a>
+    <a href="/leaderboard">Leaderboard</a>
+    <a href="/analytics">Analytics</a>
+    <a href="/admin">Admin</a>
+    <a href="/logout">Logout</a>
+
+
+</div>
+
+<div class="main">
+
+    <h1>House Analytics</h1>
+<div class="card">
+
+    <h2>Total House Earnings</h2>
+
+    <h1 style="color:#00ff99;">
+
+        ₽{{ "{:,.0f}".format(house_profit) }}
+
+    </h1>
+
+    <p>
+        Total Bet Volume:
+        ₽{{ "{:,.0f}".format(total_bets) }}
+    </p>
+
+    <p>
+        Total Paid Out:
+        ₽{{ "{:,.0f}".format(total_payouts) }}
+    </p>
+
+</div>
+    <div class="card">
+
+        <canvas id="profitChart"></canvas>
+
+    </div>
+
+</div>
+<script>
+
+const ctx = document.getElementById('profitChart');
+
+new Chart(ctx, {
+
+    type: 'doughnut',
+
+    data: {
+
+        labels: [
+
+            'House Wins',
+            'Player Wins'
+
+        ],
+
+        datasets: [{
+
+            data: [
+
+                {{ losses }},
+                {{ wins }}
+
+            ],
+
+            backgroundColor: [
+
+                '#00ff99',
+                '#ff5555'
+
+            ],
+
+            borderWidth: 0
+
+        }]
+    },
+
+    options: {
+
+        plugins: {
+
+            legend: {
+
+                labels: {
+
+                    color: 'white',
+                    font: {
+                        size: 16
+                    }
+
+                }
+
+            }
+
+        }
+
+    }
+
+});
+
+</script>
+
+</body>
+</html>

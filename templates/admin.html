@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Admin Dashboard</title>
+
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+<div class="sidebar">
+
+    <h2>Shiny Bets</h2>
+
+    <a href="/">Home</a>
+
+    <a href="/bets">Current Bets</a>
+
+    <a href="/history">Past Bets</a>
+
+    <a href="/leaderboard">Leaderboard</a>
+
+    <a href="/analytics">Profit Analytics</a>
+
+    <a href="/admin">Admin Dashboard</a>
+    <a href="/logout">Logout</a>
+
+</div>
+
+<div class="main">
+
+    <h1>Admin Dashboard</h1>
+
+    <div class="card">
+
+        <h2>Create New Bet</h2>
+
+        <form method="POST">
+
+            <input
+                name="pokemon"
+                placeholder="Pokemon Name"
+                required
+            ><br><br>
+
+            <input
+                name="player"
+                placeholder="Player"
+                required
+            ><br><br>
+
+            <input
+                name="target"
+                placeholder="Target Encounter"
+                required
+            ><br><br>
+
+            <input
+                name="current"
+                placeholder="Current Encounter"
+                required
+            ><br><br>
+
+            <input
+                name="amount"
+                placeholder="Bet Amount"
+                required
+            ><br><br>
+
+            <textarea
+                name="description"
+                placeholder="Description"
+            ></textarea><br><br>
+
+            <button type="submit">
+                Create Bet
+            </button>
+
+        </form>
+
+    </div>
+
+    <div class="card">
+
+        <h2>Open Bets</h2>
+
+        {% for bet in bets %}
+
+        {% if bet.status == 'Open' %}
+
+        <div style="
+            border:1px solid #333;
+            padding:20px;
+            margin-bottom:20px;
+            border-radius:10px;
+        ">
+
+            <h2>{{ bet.title.title() }}</h2>
+
+            <img
+                src="https://img.pokemondb.net/sprites/home/shiny/{{ bet.title.lower() }}.png"
+                width="150"
+            >
+
+            <p>
+                <strong>Player:</strong>
+                {{ bet.player }}
+            </p>
+
+            <p>
+                <strong>Target Encounter:</strong>
+                {{ bet.target_encounter }}
+            </p>
+            <p>
+                <strong>Current Encounter:</strong>
+                {{ bet.current_encounter }}
+            </p>
+            <p>
+                <strong>Status:</strong>
+                {{ bet.status }}
+            </p>
+
+            <p>{{ bet.description }}</p>
+<hr>
+
+<h3>Settle Bet</h3>
+
+<form method="POST" action="/settle/{{ bet.id }}">
+
+    <input
+        name="actual_encounter"
+        placeholder="Actual Encounter Number"
+        required
+    >
+
+    <br><br>
+
+    <br><br>
+
+    <button type="submit">
+        Settle Bet
+    </button>
+
+</form>
+      
+
+        </div>
+
+        {% endif %}
+
+        {% endfor %}
+
+    </div>
+
+</div>
+
+</body>
+</html>

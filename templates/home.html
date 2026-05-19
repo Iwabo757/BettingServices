@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Shiny Bets</title>
+
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+<div class="sidebar">
+
+    <h2>Shiny Bets</h2>
+
+    <a href="/">Home</a>
+    <a href="/bets">Current Bets</a>
+    <a href="/history">Past Bets</a>
+    <a href="/leaderboard">Leaderboard</a>
+    <a href="/login">Login</a>
+    <a href="/logout">Logout</a>
+
+</div>
+
+<div class="main">
+
+    <h1>Welcome to Shiny Bets</h1>
+
+    <div class="card">
+
+        <h2>Live Shiny Encounter Betting</h2>
+
+        <p>
+            Bet on when players will encounter shiny Pokémon.
+        </p>
+
+        <img
+            src="https://img.pokemondb.net/sprites/home/shiny/rayquaza.png"
+            width="250"
+        >
+
+    </div>
+
+    <div class="card">
+
+        <h2>Current Active Bets</h2>
+
+        <p>{{ bets|length }} active bets running.</p>
+
+    </div>
+
+</div>
+
+</body>
+</html>

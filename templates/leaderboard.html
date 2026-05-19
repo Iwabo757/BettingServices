@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Leaderboard</title>
+
+    <link rel="stylesheet" href="/static/style.css">
+
+</head>
+
+<body>
+
+<div class="sidebar">
+
+    <h2>Shiny Bets</h2>
+
+    <a href="/">Home</a>
+
+    <a href="/bets">Current Bets</a>
+
+    <a href="/history">Past Bets</a>
+
+    <a href="/leaderboard">Leaderboard</a>
+
+    <a href="/login">Login</a>
+
+</div>
+
+<div class="main">
+
+    <h1>Top Players</h1>
+
+    {% for user in users %}
+
+    <div class="card">
+
+        <h2>#{{ loop.index }} - {{ user.username }}</h2>
+
+        <p>
+            <strong>Total Profit:</strong>
+            ${{ user.profit }}
+        </p>
+
+        <p>
+            <strong>Bets Won:</strong>
+            {{ user.bets_won }}
+        </p>
+
+        <p>
+            <strong>Bets Lost:</strong>
+            {{ user.bets_lost }}
+        </p>
+
+    </div>
+
+    {% endfor %}
+
+</div>
+
+</body>
+</html>

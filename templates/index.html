@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Current Bets</title>
+
+    <link rel="stylesheet" href="/static/style.css">
+
+</head>
+
+<body>
+
+<div class="sidebar">
+
+    <h2>Shiny Bets</h2>
+
+    <a href="/">Home</a>
+
+    <a href="/bets">Current Bets</a>
+
+    <a href="/history">Past Bets</a>
+
+    <a href="/leaderboard">Leaderboard</a>
+
+    <a href="/analytics">Analytics</a>
+
+    <a href="/login">Login</a>
+
+    <a href="/logout">Logout</a>
+
+</div>
+
+<div class="main">
+
+    <h1>Current Bets</h1>
+
+    {% for bet in bets %}
+
+    {% if bet.status == 'Open' %}
+
+    <div class="card">
+
+        <h2>{{ bet.title.title() }}</h2>
+
+        <img
+            src="https://img.pokemondb.net/sprites/home/shiny/{{ bet.title.lower() }}.png"
+            width="150"
+            style="image-rendering: pixelated;"
+        >
+
+        <p>
+            <strong>Player:</strong>
+            {{ bet.player }}
+        </p>
+
+        <p>
+            <strong>Current Encounter:</strong>
+            {{ bet.current_encounter }}
+        </p>
+
+        <p>
+            <strong>Bet Encounter:</strong>
+            {{ bet.target_encounter }}
+        </p>
+
+        <p>
+            <strong>Bet Amount:</strong>
+            ₽{{ "{:,.0f}".format(bet.bet_amount) }}
+        </p>
+
+        <hr>
+
+        <h3>Payout Tiers</h3>
+
+        <p>
+            Within 500 Enc:
+            <strong>
+                ₽{{ "{:,.0f}".format(bet.bet_amount * 1.5) }}
+            </strong>
+        </p>
+
+        <p>
+            Within 250 Enc:
+            <strong>
+                ₽{{ "{:,.0f}".format(bet.bet_amount * 1.75) }}
+            </strong>
+        </p>
+
+        <p>
+            Within 100 Enc:
+            <strong>
+                ₽{{ "{:,.0f}".format(bet.bet_amount * 2) }}
+            </strong>
+        </p>
+
+    </div>
+
+    {% endif %}
+
+    {% endfor %}
+
+</div>
+
+</body>
+</html>
