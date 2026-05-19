@@ -10,41 +10,67 @@
 </head>
 
 <body>
+
 <button class="menu-btn" onclick="toggleSidebar()">
     ☰ Menu
 </button>
+
 {% include 'components/sidebar.html' %}
 
 <div class="main">
 
     <h1>Top Players</h1>
 
-    {% for user in users %}
+    {% if users %}
 
-    <div class="card">
+        {% for user in users %}
 
-        <h2>#{{ loop.index }} - {{ user.username }}</h2>
+        <div class="card">
 
-        <p>
-            <strong>Total Profit:</strong>
-            ${{ user.profit }}
-        </p>
+            <h2>
+                #{{ loop.index }}
+                - 
+                {{ user.username }}
+            </h2>
 
-        <p>
-            <strong>Bets Won:</strong>
-            {{ user.bets_won }}
-        </p>
+            <p>
+                <strong>Total Profit:</strong>
 
-        <p>
-            <strong>Bets Lost:</strong>
-            {{ user.bets_lost }}
-        </p>
+                ¥{{ "{:,.0f}".format(user.profit or 0) }}
+            </p>
 
-    </div>
+            <p>
+                <strong>Bets Won:</strong>
 
-    {% endfor %}
+                {{ "{:,}".format(user.bets_won or 0) }}
+            </p>
+
+            <p>
+                <strong>Bets Lost:</strong>
+
+                {{ "{:,}".format(user.bets_lost or 0) }}
+            </p>
+
+        </div>
+
+        {% endfor %}
+
+    {% else %}
+
+        <div class="card">
+
+            <h2>No leaderboard data yet.</h2>
+
+            <p>
+                Settle some bets to generate rankings.
+            </p>
+
+        </div>
+
+    {% endif %}
 
 </div>
+
 <script>
 
 function toggleSidebar() {
@@ -57,5 +83,6 @@ function toggleSidebar() {
 }
 
 </script>
+
 </body>
 </html>
