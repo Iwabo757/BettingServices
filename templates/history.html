@@ -83,6 +83,28 @@
             {% endif %}
         </p>
 
+{% if session.get('admin') %}
+
+<form
+    method="POST"
+    action="/delete_bet/{{ bet.id }}"
+    style="margin-top:20px;"
+>
+
+    <button
+        type="submit"
+        style="
+            background:#ff4444;
+            color:white;
+        "
+    >
+        Delete Bet
+    </button>
+
+</form>
+
+{% endif %}
+
     </div>
 
     {% endfor %}

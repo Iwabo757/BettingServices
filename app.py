@@ -4,7 +4,7 @@ from flask_sqlalchemy import SQLAlchemy
 app = Flask(__name__)
 
 app.config['SECRET_KEY'] = 'supersecretkey'
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:C7SryYAIB9Lpo4rN@db.ebxdbkmnchebkbhihebr.supabase.co:5432/postgres'
 
 # DATABASE
 
@@ -280,6 +280,19 @@ def settle_bet(bet_id):
 
     return redirect(url_for('admin'))
 
+@app.route('/delete_bet/<int:bet_id>', methods=['POST'])
+def delete_bet(bet_id):
+
+    if not session.get('admin'):
+        return redirect(url_for('login'))
+
+    bet = Bet.query.get_or_404(bet_id)
+
+    db.session.delete(bet)
+
+    db.session.commit()
+
+    return redirect(url_for('history'))
 # START APP
 
 if __name__ == '__main__':
