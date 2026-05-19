@@ -97,11 +97,11 @@
 
             <p>
                 <strong>Target Encounter:</strong>
-                {{ bet.target_encounter }}
+                {{ "{:,}".format(bet.target_encounter) }}
             </p>
             <p>
                 <strong>Current Encounter:</strong>
-                {{ bet.current_encounter }}
+                {{ "{:,}".format(bet.current_encounter) }}
             </p>
             <p>
                 <strong>Status:</strong>

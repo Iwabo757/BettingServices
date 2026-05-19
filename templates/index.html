@@ -40,12 +40,12 @@
 
         <p>
             <strong>Current Encounter:</strong>
-            {{ bet.current_encounter }}
+            {{ "{:,}".format(bet.current_encounter) }}
         </p>
 
         <p>
             <strong>Bet Encounter:</strong>
-            {{ bet.target_encounter }}
+            {{ "{:,}".format(bet.target_encounter) }}
         </p>
 
         <p>

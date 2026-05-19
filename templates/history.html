@@ -36,12 +36,12 @@
 
         <p>
             <strong>Target Encounter:</strong>
-            {{ bet.target_encounter }}
+            {{ "{:,}".format(bet.target_encounter) }}
         </p>
 
         <p>
             <strong>Actual Encounter:</strong>
-            {{ bet.actual_encounter }}
+            {{ "{:,}".format(bet.actual_encounter) }}
         </p>
         <p>
             <strong>Bet Amount:</strong>
