@@ -1,3 +1,7 @@
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     background: #000;
     color: white;
@@ -5,14 +9,19 @@ body {
     margin: 0;
 }
 
+/* SIDEBAR */
+
 .sidebar {
-    width: 220px;
+    width: 240px;
     background: #111;
     height: 100vh;
     position: fixed;
     left: 0;
     top: 0;
     padding: 20px;
+    overflow-y: auto;
+    transition: 0.3s;
+    z-index: 1000;
 }
 
 .sidebar h2 {
@@ -24,39 +33,104 @@ body {
     color: white;
     text-decoration: none;
     margin-bottom: 20px;
+    font-size: 18px;
 }
 
 .sidebar a:hover {
     color: #00ff99;
 }
 
+/* MAIN CONTENT */
+
 .main {
-    margin-left: 260px;
+    margin-left: 280px;
     padding: 30px;
 }
+
+/* CARDS */
 
 .card {
     background: #111;
     border: 1px solid #333;
     padding: 20px;
-    border-radius: 10px;
-    margin-bottom: 20px;
+    border-radius: 15px;
+    margin-bottom: 25px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.4);
+}
+
+/* FORMS */
+
+input,
+textarea,
+select {
+    width: 100%;
+    max-width: 400px;
+    padding: 12px;
+    background: #222;
+    border: 1px solid #444;
+    color: white;
+    border-radius: 8px;
+    font-size: 16px;
 }
 
 button {
     background: #00ff99;
     border: none;
-    padding: 10px 20px;
+    padding: 12px 20px;
     cursor: pointer;
+    font-weight: bold;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+/* MOBILE MENU BUTTON */
+
+.menu-btn {
+    display: none;
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    background: #00ff99;
+    color: black;
+    border: none;
+    padding: 12px 16px;
+    border-radius: 10px;
+    z-index: 2000;
     font-weight: bold;
 }
 
-input,
-textarea,
-select {
-    width: 300px;
-    padding: 10px;
-    background: #222;
-    border: 1px solid #444;
-    color: white;
+/* MOBILE SUPPORT */
+
+@media (max-width: 900px) {
+
+    .sidebar {
+        left: -300px;
+        width: 240px;
+    }
+
+    .sidebar.active {
+        left: 0;
+    }
+
+    .main {
+        margin-left: 0;
+        padding: 80px 20px 20px 20px;
+    }
+
+    .menu-btn {
+        display: block;
+    }
+
+    .card {
+        padding: 15px;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+    }
 }

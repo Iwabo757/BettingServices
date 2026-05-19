@@ -8,7 +8,9 @@
 </head>
 
 <body>
-
+<button class="menu-btn" onclick="toggleSidebar()">
+    ☰ Menu
+</button>
 {% include 'components/sidebar.html' %}
 
 <div class="main">
@@ -60,6 +62,17 @@
     </div>
 
 </div>
+<script>
 
+function toggleSidebar() {
+
+    document
+        .querySelector('.sidebar')
+        .classList
+        .toggle('active');
+
+}
+
+</script>
 </body>
 </html>
