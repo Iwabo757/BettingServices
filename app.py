@@ -212,41 +212,55 @@ def settle_bet(bet_id):
     payout = 0
     multiplier = 0
 
-    if diff <= 100:
+    difference = abs(
+    actual_encounter - bet.target_encounter
+    )
 
+    multiplier = 1.0
+
+    if difference <= 10:
+        multiplier = 3.0
+
+    elif difference <= 50:
+        multiplier = 2.5
+
+    elif difference <= 100:
         multiplier = 2.0
 
-        bet.status = 'Won'
-
-    elif diff <= 250:
-
+    elif difference <= 250:
         multiplier = 1.75
 
-        bet.status = 'Won'
-
-    elif diff <= 500:
-
+    elif difference <= 500:
         multiplier = 1.5
 
-        bet.status = 'Won'
-
-    elif diff <= 1000:
-
+    elif difference <= 1000:
         multiplier = 1.25
 
-        bet.status = 'Won'
+    elif difference <= 2000:
+        multiplier = 1.20
+
+    elif difference <= 3000:
+        multiplier = 1.15
+
+    elif difference <= 4000:
+        multiplier = 1.10
 
     else:
+        multiplier = 1.0
 
-        bet.status = 'Lost'
+    gross_payout = int(
+    bet.bet_amount * multiplier
+    )
 
-    if multiplier > 0:
+    house_cut = int(
+        gross_payout * 0.10
+    )
 
-        payout = int(
-            bet.bet_amount * multiplier * 0.95
-        )
+    final_payout = gross_payout - house_cut
 
-    bet.payout = payout
+    bet.payout = final_payout
+
+    bet.house_cut = house_cut
 
     user = User.query.filter_by(
         username=bet.player
