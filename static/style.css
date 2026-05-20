@@ -61,11 +61,9 @@ body {
 
     margin-left: 240px;
 
-    width: calc(100% - 240px);
-
     min-height: 100vh;
 
-    padding: 30px 40px;
+    padding: 30px 25px;
 
     box-sizing: border-box;
 
@@ -311,11 +309,11 @@ body {
 
     width: 100%;
 
-    max-width: 850px;
+    max-width: 1050px;
 
     margin-top: 20px;
 
-    padding: 30px;
+    padding: 40px 30px;
 
     border-radius: 25px;
 
