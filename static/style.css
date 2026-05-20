@@ -177,7 +177,7 @@ body {
 
     position: relative;
 
-    width: calc(100% - 260px);
+    width: auto;
 }
 
 .main h1 {
@@ -283,9 +283,9 @@ body {
 
 .hero-bets {
 
-    width: calc(100vw - 340px);
+    width: 100%;
 
-    max-width: 1450px;
+    max-width: 1350px;
 
     overflow: hidden;
 
@@ -309,7 +309,11 @@ body {
 
     overflow: hidden;
 
-    padding: 20px 0;
+    display: flex;
+
+    justify-content: center;
+
+    position: relative;
 }
 
 .bet-track {
@@ -321,6 +325,12 @@ body {
     width: max-content;
 
     animation: scrollBets 40s linear infinite;
+
+    padding-left: 120px;
+
+    padding-right: 120px;
+
+    box-sizing: border-box;
 }
 
 .bet-card strong {
@@ -507,7 +517,7 @@ body {
 
 .live-card {
 
-    width: calc(100vw - 340px);
+    width: 100%;
 
     max-width: 1350px;
 
@@ -527,7 +537,6 @@ body {
 
     overflow: hidden;
 }
-
 .live-card img {
 
     width: 180px;
@@ -757,4 +766,11 @@ button:hover {
     text-shadow: 0 0 10px rgba(255,107,107,0.7);
 
     font-weight: 700;
+}
+.hero-bets,
+.live-card {
+
+    margin-left: auto;
+
+    margin-right: auto;
 }
