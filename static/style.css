@@ -318,7 +318,7 @@ body {
     animation: scrollBets 40s linear infinite;
 }
 
-@keyframes scrollLoop {
+@keyframes scrollBets {
 
     0% {
 
@@ -512,6 +512,12 @@ body {
     text-align: center;
 
     box-sizing: border-box;
+
+    overflow: hidden;
+
+    padding-left: 60px;
+
+    padding-right: 60px;
 }
 
 .live-card img {
@@ -537,13 +543,15 @@ body {
 
     font-size: 20px;
 
-    line-height: 1.9;
+    line-height: 1.8;
 
     font-weight: 500;
 
-    max-width: 900px;
+    max-width: 850px;
 
     margin: 0 auto;
+
+    text-align: center;
 }
 
 /* INPUTS */
