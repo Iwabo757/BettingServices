@@ -193,7 +193,15 @@ body {
 
 .home-main {
 
-    width: 100%;
+    margin-left: 260px;
+
+    width: calc(100% - 260px);
+
+    padding: 40px;
+
+    box-sizing: border-box;
+
+    overflow-x: hidden;
 
     display: flex;
 
@@ -519,17 +527,15 @@ body {
 
 .live-card {
 
-    width: calc(100vw - 340px);
+    width: calc(100% - 80px);
 
-    max-width: 1250px;
+    max-width: 1100px;
 
-    min-width: 0;
+    margin: 50px auto;
 
-    margin: 40px auto;
+    padding: 40px;
 
-    padding: 28px;
-
-    border-radius: 25px;
+    border-radius: 28px;
 
     background: rgba(0, 0, 0, 0.82);
 
@@ -539,7 +545,9 @@ body {
 
     box-sizing: border-box;
 
-    overflow: hidden;
+    overflow-wrap: break-word;
+
+    overflow-x: hidden;
 }
 
 .live-card img {
