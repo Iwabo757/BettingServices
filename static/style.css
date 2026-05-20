@@ -19,7 +19,7 @@ body {
             rgba(0,0,0,0.88),
             rgba(0,0,0,0.92)
         ),
-        url("/static/images/poker-bg.jpg");
+        url("/static/images/poker-bg.png");
 
     background-size: cover;
 
@@ -48,27 +48,26 @@ body {
 
     z-index: 1000;
 
-    overflow-y: hidden;
+    overflow: hidden;
 
     background:
         linear-gradient(
-            rgba(0,0,0,0.88),
-            rgba(0,0,0,0.94)
+            rgba(0,0,0,0.78),
+            rgba(0,0,0,0.90)
         ),
         url("/static/images/sidebar-bg.png");
 
     background-size: cover;
 
     background-position: center;
- 
-    background-blend-mode: overlay;
+
+    background-repeat: no-repeat;
 
     border-right:
         1px solid rgba(255,255,255,0.08);
 
-    backdrop-filter: blur(12px);
+    backdrop-filter: blur(10px);
 }
-
 .sidebar::before {
 
     content: "";
@@ -166,8 +165,6 @@ body {
 
     margin-left: 260px;
 
-    width: calc(100% - 260px);
-
     min-height: 100vh;
 
     padding: 40px;
@@ -177,6 +174,12 @@ body {
     position: relative;
 
     z-index: 1;
+
+    width: auto;
+
+    max-width: calc(100vw - 260px);
+
+    overflow-x: hidden;
 }
 
 .main h1 {
@@ -192,9 +195,7 @@ body {
 
 .home-main {
 
-    width: 100%;
-
-    max-width: 1150px;
+    max-width: 1400px;
 
     margin: 0 auto;
 
@@ -302,15 +303,11 @@ body {
 
     width: 100%;
 
-    overflow: hidden;
-
-    position: relative;
-
-    padding: 20px 0;
-
     display: flex;
 
     justify-content: center;
+
+    overflow: hidden;
 }
 
 .bet-track {
