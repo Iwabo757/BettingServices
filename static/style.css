@@ -191,11 +191,11 @@ body {
 
 .home-main {
 
-    max-width: 1250px;
+    width: 100%;
 
-    margin: 0 auto;
+    max-width: none;
 
-    padding: 0 20px;
+    padding: 0 40px;
 
     box-sizing: border-box;
 
@@ -207,6 +207,7 @@ body {
 
     text-align: center;
 }
+
 /* HERO */
 
 .hero-title {
@@ -283,6 +284,8 @@ body {
 .hero-bets {
 
     width: 100%;
+
+    max-width: 1500px;
 
     overflow: hidden;
 
@@ -497,11 +500,11 @@ body {
 
     width: 100%;
 
-    max-width: 1100px;
+    max-width: 1400px;
 
     margin: 40px auto;
 
-    padding: 40px 30px;
+    padding: 40px 60px;
 
     border-radius: 25px;
 
@@ -514,10 +517,6 @@ body {
     box-sizing: border-box;
 
     overflow: hidden;
-
-    padding-left: 60px;
-
-    padding-right: 60px;
 }
 
 .live-card img {
