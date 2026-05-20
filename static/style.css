@@ -5,22 +5,31 @@ html {
 body {
     background: #000;
     color: white;
-    font-family: Arial;
+    font-family: Arial, sans-serif;
     margin: 0;
+    overflow-x: hidden;
 }
 
 /* SIDEBAR */
 
 .sidebar {
     width: 240px;
-    background: #111;
     height: 100vh;
+
     position: fixed;
-    left: 0;
     top: 0;
+    left: 0;
+
+    background: #111;
+
     padding: 20px;
+
     overflow-y: auto;
+
+    box-sizing: border-box;
+
     transition: 0.3s;
+
     z-index: 1000;
 }
 
@@ -30,344 +39,67 @@ body {
 
 .sidebar a {
     display: block;
+
     color: white;
+
     text-decoration: none;
+
     margin-bottom: 20px;
+
     font-size: 18px;
+
+    transition: 0.2s;
 }
 
 .sidebar a:hover {
-    color: #00ff99;
+    color: #65ff72;
 }
 
-
-/* MAIN CONTENT */
+/* MAIN LAYOUT */
 
 .main {
-    margin-left: 280px;
+
+    margin-left: 240px;
+
+    min-height: 100vh;
+
     padding: 30px;
-}
-/* CARDS */
 
-.card {
-    background: #111;
-    border: 1px solid #333;
-    padding: 20px;
-    border-radius: 15px;
-    margin-bottom: 25px;
-    box-shadow: 0 0 15px rgba(0,0,0,0.4);
-}
+    box-sizing: border-box;
 
-/* FORMS */
-
-input,
-textarea,
-select {
-    width: 100%;
-    max-width: 400px;
-    padding: 12px;
-    background: #222;
-    border: 1px solid #444;
-    color: white;
-    border-radius: 8px;
-    font-size: 16px;
-}
-
-button {
-    background: #00ff99;
-    border: none;
-    padding: 12px 20px;
-    cursor: pointer;
-    font-weight: bold;
-    border-radius: 8px;
-    font-size: 16px;
-}
-
-button:hover {
-    opacity: 0.9;
+    overflow-x: hidden;
 }
 
 .home-main {
-    text-align: center;
-}
-
-/* MOBILE MENU BUTTON */
-
-.menu-btn {
-    display: none;
-    position: fixed;
-    top: 15px;
-    left: 15px;
-    background: #00ff99;
-    color: black;
-    border: none;
-    padding: 12px 16px;
-    border-radius: 10px;
-    z-index: 2000;
-    font-weight: bold;
-}
-
-/* MOBILE SUPPORT */
-
-@media (max-width: 900px) {
-
-    .sidebar {
-
-        left: -300px;
-
-        width: 240px;
-
-        position: fixed;
-
-        top: 0;
-
-        height: 100vh;
-
-    }
-
-    .sidebar.active {
-
-        left: 0;
-
-    }
-
-    .main {
-
-        margin-left: 0;
-
-        padding: 90px 20px 20px 20px;
-
-        max-width: 100%;
-
-    }
-
-    .menu-btn {
-
-        display: block;
-
-    }
-
-    .card {
-
-        padding: 15px;
-
-    }
-
-    img {
-
-        max-width: 100%;
-
-        height: auto;
-
-    }
-
-}
-/* HERO BET SCROLLER */
-
-.hero-bets {
-    margin-bottom: 40px;
-}
-
-.bet-scroll {
-
-    display: flex;
-
-    gap: 20px;
-
-    overflow: hidden;
-
-    padding: 20px 0;
 
     width: 100%;
 
-    position: relative;
+    max-width: 1100px;
 
-}
-
-.bet-track {
+    margin: 0 auto;
 
     display: flex;
 
-    gap: 20px;
+    flex-direction: column;
 
-    width: max-content;
-
-    animation: scrollLoop 60s linear infinite;
-
-    will-change: transform;
-
-}
-
-.bet-scroll::-webkit-scrollbar {
-    height: 8px;
-}
-
-.bet-scroll::-webkit-scrollbar-thumb {
-    background: #00ff99;
-    border-radius: 10px;
-}
-
-.scroll-card {
-
-    min-width: 140px;
-
-    background: linear-gradient(
-        145deg,
-        #111,
-        #1a1a1a
-    );
-
-    border: 1px solid #333;
-
-    border-radius: 20px;
-
-    padding: 10px;
-
-    font-size: 14px;
-
-    flex-shrink: 0;
-
-    text-align: center;
-
-    transition: 0.3s;
-
-    box-shadow:
-        0 0 15px rgba(0,0,0,0.4);
-}
-.scroll-card:hover {
-
-    transform: translateY(-5px);
-
-    border-color: #00ff99;
-
-    box-shadow:
-        0 0 20px rgba(0,255,153,0.4);
-}
-
-.scroll-card img {
-    margin-bottom: 10px;
-}
-
-.card img {
-
-    filter:
-        drop-shadow(0 0 15px rgba(0,255,153,0.4));
-
-}
-
-.hero-bets h1,
-.hero-bets p {
-    text-align: center;
-}
-
-@keyframes scrollLoop {
-
-    0% {
-        transform: translateX(0);
-    }
-
-    100% {
-        transform: translateX(-50%);
-    }
-
-}
-.hero-title {
-
-    font-size: 42px;
-
-    margin-bottom: 10px;
-
-    font-weight: bold;
-}
-
-.hero-subtitle {
-
-    color: #aaa;
-
-    font-size: 22px;
-
-    margin-bottom: 30px;
-}
-
-.active-count {
-
-    color: #aaa;
-
-    margin-bottom: 30px;
-}
-
-.scroll-card {
-
-    min-width: 140px;
-
-    padding: 10px;
-
-    border-radius: 25px;
-
-    background: linear-gradient(
-        145deg,
-        #111,
-        #090909
-    );
-
-    border: 1px solid #222;
+    align-items: center;
 
     text-align: center;
 }
 
-.scroll-card h2 {
-
-    font-size: 16px;
-
-    margin-top: 10px;
-}
-
-.scroll-card p {
-
-    font-size: 12px;
-
-    color: #ddd;
-}
-
-.win-text {
-
-    color: #00ff99 !important;
-
-    font-weight: bold;
-
-    margin-top: 15px;
-}
-
-.rate-text {
-
-    color: #00ff99 !important;
-
-    font-weight: bold;
-}
-
-.live-card {
-
-    margin-top: 25px;
-
-    padding: 20px;
-}
-
-.live-card h2 {
-
-    font-size: 42px;
-}
+/* HERO SECTION */
 
 .hero-title {
 
-    font-size: 72px;
+    font-size: 52px;
 
     font-weight: 900;
 
-    margin-bottom: 15px;
-
-    letter-spacing: -2px;
+    margin-bottom: 10px;
 
     line-height: 1.1;
+
+    letter-spacing: -2px;
 }
 
 .green-text {
@@ -376,8 +108,19 @@ button:hover {
 
     text-shadow:
         0 0 10px rgba(101,255,114,0.5);
-
 }
+
+.hero-subtitle {
+
+    color: #aaa;
+
+    font-size: 20px;
+
+    margin-bottom: 20px;
+}
+
+/* SECTION TITLE */
+
 .section-title {
 
     display: flex;
@@ -407,13 +150,168 @@ button:hover {
         transparent
     );
 }
-.live-card {
 
-    margin-top: 30px;
+/* HERO BETS */
+
+.hero-bets {
 
     width: 100%;
 
-    max-width: 1000px;
+    overflow: hidden;
+
+    margin-bottom: 40px;
+}
+
+.active-count {
+
+    color: #aaa;
+
+    margin-bottom: 20px;
+}
+
+/* SCROLLER */
+
+.bet-scroll {
+
+    width: 100%;
+
+    overflow: hidden;
+
+    position: relative;
+
+    padding: 20px 0;
+}
+
+.bet-track {
+
+    display: flex;
+
+    gap: 18px;
+
+    width: max-content;
+
+    animation: scrollLoop 45s linear infinite;
+
+    will-change: transform;
+}
+
+@keyframes scrollLoop {
+
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* BET CARD */
+
+.scroll-card {
+
+    width: 160px;
+
+    min-width: 160px;
+
+    padding: 16px 12px;
+
+    border-radius: 22px;
+
+    background: linear-gradient(
+        145deg,
+        #111,
+        #090909
+    );
+
+    border: 1px solid rgba(101,255,114,0.2);
+
+    text-align: center;
+
+    flex-shrink: 0;
+
+    transition: 0.3s;
+
+    box-shadow:
+        0 0 15px rgba(0,0,0,0.4);
+}
+
+.scroll-card:hover {
+
+    transform: translateY(-5px);
+
+    border-color: #65ff72;
+
+    box-shadow:
+        0 0 20px rgba(101,255,114,0.25);
+}
+
+.scroll-card img {
+
+    width: 60px;
+
+    margin-bottom: 10px;
+
+    filter:
+        drop-shadow(0 0 10px rgba(101,255,114,0.35));
+}
+
+.scroll-card h2 {
+
+    font-size: 16px;
+
+    margin: 8px 0;
+}
+
+.scroll-card p {
+
+    font-size: 12px;
+
+    color: #ccc;
+
+    margin: 5px 0;
+}
+
+.win-text {
+
+    color: #65ff72 !important;
+
+    font-weight: bold;
+
+    margin-top: 12px;
+}
+
+/* STANDARD CARD */
+
+.card {
+
+    width: 100%;
+
+    background: #111;
+
+    border: 1px solid #333;
+
+    border-radius: 18px;
+
+    padding: 20px;
+
+    box-sizing: border-box;
+
+    margin-bottom: 25px;
+
+    box-shadow:
+        0 0 15px rgba(0,0,0,0.4);
+}
+
+/* LIVE CARD */
+
+.live-card {
+
+    width: 100%;
+
+    max-width: 950px;
+
+    margin-top: 20px;
 
     padding: 30px;
 
@@ -430,19 +328,166 @@ button:hover {
     text-align: center;
 
     box-shadow:
-        0 0 25px rgba(101,255,114,0.18);
-
+        0 0 25px rgba(101,255,114,0.15);
 }
+
 .live-card img {
 
-    width: 220px;
+    width: 180px;
 
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 
     filter:
-        drop-shadow(0 0 20px rgba(101,255,114,0.5));
+        drop-shadow(0 0 20px rgba(101,255,114,0.45));
 }
-.live-content {
 
-    text-align: left;
+.live-card h2 {
+
+    font-size: 36px;
+
+    margin-bottom: 10px;
+}
+
+/* FORMS */
+
+input,
+textarea,
+select {
+
+    width: 100%;
+
+    max-width: 400px;
+
+    padding: 12px;
+
+    background: #222;
+
+    border: 1px solid #444;
+
+    color: white;
+
+    border-radius: 8px;
+
+    font-size: 16px;
+
+    box-sizing: border-box;
+}
+
+/* BUTTONS */
+
+button {
+
+    background: #65ff72;
+
+    color: black;
+
+    border: none;
+
+    padding: 12px 20px;
+
+    border-radius: 10px;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+/* MOBILE MENU BUTTON */
+
+.menu-btn {
+
+    display: none;
+
+    position: fixed;
+
+    top: 15px;
+    left: 15px;
+
+    background: #65ff72;
+
+    color: black;
+
+    border: none;
+
+    padding: 12px 16px;
+
+    border-radius: 10px;
+
+    font-weight: bold;
+
+    z-index: 2000;
+}
+
+/* MOBILE */
+
+@media (max-width: 900px) {
+
+    .sidebar {
+
+        left: -260px;
+    }
+
+    .sidebar.active {
+
+        left: 0;
+    }
+
+    .main {
+
+        margin-left: 0;
+
+        padding: 90px 20px 20px 20px;
+    }
+
+    .menu-btn {
+
+        display: block;
+    }
+
+    .hero-title {
+
+        font-size: 38px;
+    }
+
+    .hero-subtitle {
+
+        font-size: 16px;
+    }
+
+    .scroll-card {
+
+        width: 140px;
+
+        min-width: 140px;
+    }
+
+    .live-card {
+
+        padding: 20px;
+    }
+
+    .live-card h2 {
+
+        font-size: 28px;
+    }
+
+    .live-card img {
+
+        width: 140px;
+    }
+
+    img {
+
+        max-width: 100%;
+
+        height: auto;
+    }
 }
