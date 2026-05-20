@@ -59,6 +59,8 @@ body {
 
 .main {
 
+    width: calc(100% - 240px);
+
     margin-left: 240px;
 
     min-height: 100vh;
@@ -68,15 +70,17 @@ body {
     box-sizing: border-box;
 
     overflow-x: hidden;
+
+    display: flex;
+
+    justify-content: center;
 }
 
 .home-main {
 
     width: 100%;
 
-    max-width: 1100px;
-
-    margin: 0 auto;
+    max-width: 1200px;
 
     display: flex;
 
