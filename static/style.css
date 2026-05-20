@@ -92,13 +92,15 @@ body {
 
     font-weight: 900;
 
-    margin-bottom: 30px;
+    margin-bottom: 40px;
+
+    margin-left: 12px;
 
     color: white;
 
     letter-spacing: -1px;
 
-    line-height: 1;
+    line-height: 1.1;
 
     white-space: nowrap;
 
@@ -165,19 +167,15 @@ body {
 
     margin-left: 260px;
 
-    min-height: 100vh;
-
     padding: 40px;
+
+    min-height: 100vh;
 
     box-sizing: border-box;
 
     position: relative;
 
     z-index: 1;
-
-    width: auto;
-
-    max-width: calc(100vw - 260px);
 
     overflow-x: hidden;
 }
@@ -195,7 +193,9 @@ body {
 
 .home-main {
 
-    max-width: 1400px;
+    width: 100%;
+
+    max-width: 1200px;
 
     margin: 0 auto;
 
@@ -206,6 +206,8 @@ body {
     align-items: center;
 
     text-align: center;
+
+    box-sizing: border-box;
 }
 
 /* HERO */
@@ -502,9 +504,9 @@ body {
 
     width: 100%;
 
-    max-width: 1050px;
+    max-width: 1000px;
 
-    margin-top: 20px;
+    margin: 30px auto;
 
     padding: 40px 30px;
 
@@ -517,8 +519,9 @@ body {
 
     text-align: center;
 
-    box-shadow:
-        0 0 25px rgba(101,255,114,0.15);
+    box-sizing: border-box;
+
+    overflow: hidden;
 }
 
 .live-card img {
