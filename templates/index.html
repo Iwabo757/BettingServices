@@ -57,76 +57,120 @@
 
         <hr>
 
-<h3>Payout Tiers</h3>
+<button class="payout-toggle" onclick="togglePayout(this)">
+    View Payout Tiers ▼
+</button>
 
-<p>
-    Within 4000 Enc:
-    <strong class="tier-low">
-        ¥{{ "{:,.0f}".format(bet.bet_amount * 1.10) }}
-    </strong>
-</p>
+<div class="payout-content">
 
-<p>
-    Within 3000 Enc:
-    <strong class="tier-low">
-        ¥{{ "{:,.0f}".format(bet.bet_amount * 1.15) }}
-    </strong>
-</p>
+    <h3>Payout Tiers</h3>
 
-<p>
-    Within 2000 Enc:
-    <strong class="tier-low">
-        ¥{{ "{:,.0f}".format(bet.bet_amount * 1.20) }}
-    </strong>
-</p>
+    <p>
+        If caught between
+        {{ "{:,}".format(bet.target_encounter - 4000) }}
+        -
+        {{ "{:,}".format(bet.target_encounter + 4000) }}
 
-<p>
-    Within 1000 Enc:
-    <strong class="tier-mid">
-        ¥{{ "{:,.0f}".format(bet.bet_amount * 1.25) }}
-    </strong>
-</p>
+        <strong class="tier-low">
+            → 110% payout
+        </strong>
+    </p>
 
-<p>
-    Within 500 Enc:
-    <strong class="tier-mid">
-        ¥{{ "{:,.0f}".format(bet.bet_amount * 1.50) }}
-    </strong>
-</p>
+    <p>
+        If caught between
+        {{ "{:,}".format(bet.target_encounter - 3000) }}
+        -
+        {{ "{:,}".format(bet.target_encounter + 3000) }}
 
-<p>
-    With in 250 Enc:
-    <strong class="tier-mid">
-        ¥{{ "{:,.0f}".format(bet.bet_amount * 1.75) }}
-    </strong>
-</p>
+        <strong class="tier-low">
+            → 115% payout
+        </strong>
+    </p>
 
-<p>
-    Within 100 Enc:
-    <strong class="tier-mid">
-        ¥{{ "{:,.0f}".format(bet.bet_amount * 2.00) }}
-    </strong>
-</p>
+    <p>
+        If caught between
+        {{ "{:,}".format(bet.target_encounter - 2000) }}
+        -
+        {{ "{:,}".format(bet.target_encounter + 2000) }}
 
-<p>
-    Within 50 Enc:
-    <strong class="tier-high">
-        ¥{{ "{:,.0f}".format(bet.bet_amount * 2.50) }}
-    </strong>
-</p>
+        <strong class="tier-mid">
+            → 120% payout
+        </strong>
+    </p>
 
-<p>
-    Within 10 Enc:
-    <strong class="tier-high">
-        ¥{{ "{:,.0f}".format(bet.bet_amount * 3.00) }}
-    </strong>
-</p>
-<p class="house-note">
+    <p>
+        If caught between
+        {{ "{:,}".format(bet.target_encounter - 1000) }}
+        -
+        {{ "{:,}".format(bet.target_encounter + 1000) }}
 
-    Final payouts include a 10% house fee deduction.
+        <strong class="tier-mid">
+            → 125% payout
+        </strong>
+    </p>
 
-</p>
-    </div>
+    <p>
+        If caught between
+        {{ "{:,}".format(bet.target_encounter - 500) }}
+        -
+        {{ "{:,}".format(bet.target_encounter + 500) }}
+
+        <strong class="tier-high">
+            → 150% payout
+        </strong>
+    </p>
+
+    <p>
+        If caught between
+        {{ "{:,}".format(bet.target_encounter - 250) }}
+        -
+        {{ "{:,}".format(bet.target_encounter + 250) }}
+
+        <strong class="tier-high">
+            → 175% payout
+        </strong>
+    </p>
+
+    <p>
+        If caught between
+        {{ "{:,}".format(bet.target_encounter - 100) }}
+        -
+        {{ "{:,}".format(bet.target_encounter + 100) }}
+
+        <strong class="tier-jackpot">
+            → 200% payout
+        </strong>
+    </p>
+
+    <p>
+        If caught between
+        {{ "{:,}".format(bet.target_encounter - 50) }}
+        -
+        {{ "{:,}".format(bet.target_encounter + 50) }}
+
+        <strong class="tier-jackpot">
+            → 250% payout
+        </strong>
+    </p>
+
+    <p>
+        If caught between
+        {{ "{:,}".format(bet.target_encounter - 10) }}
+        -
+        {{ "{:,}".format(bet.target_encounter + 10) }}
+
+        <strong class="tier-jackpot">
+            → 300% payout
+        </strong>
+    </p>
+
+    <p class="house-note">
+        Final payouts include a 10% house fee deduction.
+    </p>
+
+</div>
+
+</div>
 
     {% endif %}
 
@@ -146,7 +190,24 @@ function toggleSidebar() {
         .toggle('active');
 
 }
+function togglePayout(button) {
 
+    const content =
+        button.nextElementSibling;
+
+    content.classList.toggle("active");
+
+    if (content.classList.contains("active")) {
+
+        button.innerHTML =
+            "Hide Payout Tiers ▲";
+
+    } else {
+
+        button.innerHTML =
+            "View Payout Tiers ▼";
+    }
+}
 </script>
 </body>
 </html>
