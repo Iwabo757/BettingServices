@@ -3,13 +3,31 @@ html {
 }
 
 body {
-    background: #000;
+
+    background:
+        linear-gradient(
+            rgba(0,0,0,0.78),
+            rgba(0,0,0,0.88)
+        ),
+
+        url("/static/backgrounds/poker-bg.png");
+
+    background-size: cover;
+
+    background-position: center;
+
+    background-attachment: fixed;
+
+    background-repeat: no-repeat;
+
     color: white;
+
     font-family: Arial, sans-serif;
+
     margin: 0;
+
     overflow-x: hidden;
 }
-
 /* SIDEBAR */
 
 .sidebar {
@@ -20,7 +38,7 @@ body {
     top: 0;
     left: 0;
 
-    background: #111;
+    background: rgba(5,5,5,0.92);
 
     padding: 20px;
 
@@ -74,7 +92,7 @@ body {
 
     width: 100%;
 
-    max-width: 1050px;
+    max-width: 980px;
 
     margin: 0 auto;
 
@@ -180,6 +198,10 @@ body {
     position: relative;
 
     padding: 20px 0;
+
+    display: flex;
+
+    justify-content: center;
 }
 
 .bet-track {
@@ -193,6 +215,8 @@ body {
     animation: scrollLoop 45s linear infinite;
 
     will-change: transform;
+
+    padding-left: 120px;
 }
 
 @keyframes scrollLoop {
@@ -218,13 +242,11 @@ body {
 
     border-radius: 22px;
 
-    background: linear-gradient(
-        145deg,
-        #111,
-        #090909
-    );
+    background: rgba(10,10,10,0.72);
 
-    border: 1px solid rgba(101,255,114,0.2);
+    backdrop-filter: blur(6px);
+
+    border: 1px solid rgba(101,255,114,0.25);
 
     text-align: center;
 
@@ -233,7 +255,7 @@ body {
     transition: 0.3s;
 
     box-shadow:
-        0 0 15px rgba(0,0,0,0.4);
+        0 0 20px rgba(0,0,0,0.45);
 }
 
 .scroll-card:hover {
@@ -287,9 +309,11 @@ body {
 
     width: 100%;
 
-    background: #111;
+    background: rgba(10,10,10,0.82);
 
-    border: 1px solid #333;
+    backdrop-filter: blur(8px);
+
+    border: 1px solid rgba(101,255,114,0.15);
 
     border-radius: 18px;
 
@@ -300,7 +324,7 @@ body {
     margin-bottom: 25px;
 
     box-shadow:
-        0 0 15px rgba(0,0,0,0.4);
+        0 0 20px rgba(0,0,0,0.5);
 }
 
 /* LIVE CARD */
