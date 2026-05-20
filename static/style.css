@@ -283,9 +283,11 @@ body {
 
 .hero-bets {
 
-    width: 100%;
+    width: calc(100vw - 340px);
 
-    max-width: 1350px;
+    max-width: 1400px;
+
+    min-width: 0;
 
     overflow: hidden;
 
@@ -517,13 +519,15 @@ body {
 
 .live-card {
 
-    width: 100%;
+    width: calc(100vw - 340px);
 
-    max-width: 1350px;
+    max-width: 1250px;
+
+    min-width: 0;
 
     margin: 40px auto;
 
-    padding: 40px;
+    padding: 28px;
 
     border-radius: 25px;
 
@@ -537,6 +541,7 @@ body {
 
     overflow: hidden;
 }
+
 .live-card img {
 
     width: 180px;
@@ -569,6 +574,8 @@ body {
     margin: 0 auto;
 
     text-align: center;
+
+    box-sizing: border-box;
 }
 
 /* INPUTS */
