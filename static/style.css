@@ -32,12 +32,41 @@ body {
 
 .sidebar {
 
+    position: fixed;
+
+    top: 0;
+
+    left: 0;
+
+    width: 300px;
+
+    height: 100vh;
+
+    padding: 30px 20px;
+
+    box-sizing: border-box;
+
+    z-index: 1000;
+
+    overflow: hidden;
+
     background:
         linear-gradient(
             rgba(0,0,0,0.58),
             rgba(0,0,0,0.76)
         ),
         url("/static/images/sidebar-bg.png");
+
+    background-size: cover;
+
+    background-position: center;
+
+    background-repeat: no-repeat;
+
+    border-right:
+        1px solid rgba(255,255,255,0.08);
+
+    backdrop-filter: blur(10px);
 }
 
 .sidebar::before {
@@ -137,17 +166,13 @@ body {
 
 .main {
 
-    margin-left: 260px;
-
-    padding: 40px;
+    margin-left: 300px;
 
     min-height: 100vh;
 
+    padding: 40px;
+
     box-sizing: border-box;
-
-    position: relative;
-
-    z-index: 1;
 
     overflow-x: hidden;
 }
@@ -165,8 +190,6 @@ body {
 
 .home-main {
 
-    width: 100%;
-
     max-width: 1200px;
 
     margin: 0 auto;
@@ -178,8 +201,6 @@ body {
     align-items: center;
 
     text-align: center;
-
-    box-sizing: border-box;
 }
 
 /* HERO */
@@ -667,8 +688,6 @@ button:hover {
     .main {
 
         margin-left: 0;
-
-        width: 100%;
 
         padding: 20px;
     }
