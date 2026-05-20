@@ -167,9 +167,9 @@ body {
 
 .main {
 
-    margin-left: 300px;
+    margin-left: 340px;
 
-    padding: 40px 30px;
+    padding: 40px 40px;
 
     min-height: 100vh;
 
@@ -177,6 +177,7 @@ body {
 
     position: relative;
 }
+
 .main h1 {
 
     font-size: 38px;
