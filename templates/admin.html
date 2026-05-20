@@ -2,9 +2,11 @@
 <html>
 
 <head>
+
     <title>Admin Dashboard</title>
 
     <link rel="stylesheet" href="/static/style.css">
+
 </head>
 
 <body>
@@ -17,9 +19,13 @@
 
 <div class="main">
 
-    <h1>Admin Dashboard</h1>
+    <h1 class="section-title">
+        Admin Dashboard
+    </h1>
 
-    <div class="bets-container">
+    <!-- CREATE BET -->
+
+    <div class="bet-card admin-form-card">
 
         <h2>Create New Bet</h2>
 
@@ -29,36 +35,48 @@
                 name="pokemon"
                 placeholder="Pokemon Name"
                 required
-            ><br><br>
+            >
+
+            <br><br>
 
             <input
                 name="player"
                 placeholder="Player"
                 required
-            ><br><br>
+            >
+
+            <br><br>
 
             <input
                 name="target"
                 placeholder="Target Encounter"
                 required
-            ><br><br>
+            >
+
+            <br><br>
 
             <input
                 name="current"
                 placeholder="Current Encounter"
                 required
-            ><br><br>
+            >
+
+            <br><br>
 
             <input
                 name="amount"
                 placeholder="Bet Amount"
                 required
-            ><br><br>
+            >
+
+            <br><br>
 
             <textarea
                 name="description"
                 placeholder="Description"
-            ></textarea><br><br>
+            ></textarea>
+
+            <br><br>
 
             <button type="submit">
                 Create Bet
@@ -68,22 +86,23 @@
 
     </div>
 
-    <div class="card">
+    <!-- OPEN BETS -->
 
-        <h2>Open Bets</h2>
+    <h1 class="section-title">
+        Open Bets
+    </h1>
+
+    <div class="bets-container">
 
         {% for bet in bets %}
 
         {% if bet.status == 'Open' %}
 
-        <div style="
-            border:1px solid #333;
-            padding:20px;
-            margin-bottom:20px;
-            border-radius:10px;
-        ">
+        <div class="bet-card">
 
-            <h2>{{ bet.title.title() }}</h2>
+            <h2>
+                {{ bet.title.title() }}
+            </h2>
 
             <img
                 src="https://img.pokemondb.net/sprites/home/shiny/{{ bet.title.lower() }}.png"
@@ -99,38 +118,45 @@
                 <strong>Target Encounter:</strong>
                 {{ "{:,}".format(bet.target_encounter) }}
             </p>
+
             <p>
                 <strong>Current Encounter:</strong>
                 {{ "{:,}".format(bet.current_encounter) }}
             </p>
+
             <p>
                 <strong>Status:</strong>
                 {{ bet.status }}
             </p>
 
-            <p>{{ bet.description }}</p>
-<hr>
+            <p>
+                {{ bet.description }}
+            </p>
 
-<h3>Settle Bet</h3>
+            <hr>
 
-<form method="POST" action="/settle/{{ bet.id }}">
+            <h3>
+                Settle Bet
+            </h3>
 
-    <input
-        name="actual_encounter"
-        placeholder="Actual Encounter Number"
-        required
-    >
+            <form
+                method="POST"
+                action="/settle/{{ bet.id }}"
+            >
 
-    <br><br>
+                <input
+                    name="actual_encounter"
+                    placeholder="Actual Encounter Number"
+                    required
+                >
 
-    <br><br>
+                <br><br>
 
-    <button type="submit">
-        Settle Bet
-    </button>
+                <button type="submit">
+                    Settle Bet
+                </button>
 
-</form>
-      
+            </form>
 
         </div>
 
@@ -141,6 +167,7 @@
     </div>
 
 </div>
+
 <script>
 
 function toggleSidebar() {
@@ -153,5 +180,7 @@ function toggleSidebar() {
 }
 
 </script>
+
 </body>
+
 </html>

@@ -18,12 +18,14 @@
 <div class="main">
 
     <h1>Current Bets</h1>
+    
+    <div class="bets-container">
 
     {% for bet in bets %}
 
     {% if bet.status == 'Open' %}
 
-    <div class="bets-container">
+    <div class="bet-card">
 
         <h2>{{ bet.title.title() }}</h2>
 
@@ -50,34 +52,80 @@
 
         <p>
             <strong>Bet Amount:</strong>
-            ₽{{ "{:,.0f}".format(bet.bet_amount) }}
+            ¥{{ "{:,.0f}".format(bet.bet_amount) }}
         </p>
 
         <hr>
 
-        <h3>Payout Tiers</h3>
+<h3>Payout Tiers</h3>
 
-        <p>
-            Within 500 Enc:
-            <strong>
-                ¥{{ "{:,.0f}".format(bet.bet_amount * 1.5) }}
-            </strong>
-        </p>
+<p>
+    Within 4000 Enc:
+    <strong class="tier-low">
+        ¥{{ "{:,.0f}".format(bet.bet_amount * 1.10) }}
+    </strong>
+</p>
 
-        <p>
-            Within 250 Enc:
-            <strong>
-                ¥{{ "{:,.0f}".format(bet.bet_amount * 1.75) }}
-            </strong>
-        </p>
+<p>
+    Within 3000 Enc:
+    <strong class="tier-low">
+        ¥{{ "{:,.0f}".format(bet.bet_amount * 1.15) }}
+    </strong>
+</p>
 
-        <p>
-            Within 100 Enc:
-            <strong>
-                ¥{{ "{:,.0f}".format(bet.bet_amount * 2) }}
-            </strong>
-        </p>
+<p>
+    Within 2000 Enc:
+    <strong class="tier-low">
+        ¥{{ "{:,.0f}".format(bet.bet_amount * 1.20) }}
+    </strong>
+</p>
 
+<p>
+    Within 1000 Enc:
+    <strong class="tier-mid">
+        ¥{{ "{:,.0f}".format(bet.bet_amount * 1.25) }}
+    </strong>
+</p>
+
+<p>
+    Within 500 Enc:
+    <strong class="tier-mid">
+        ¥{{ "{:,.0f}".format(bet.bet_amount * 1.50) }}
+    </strong>
+</p>
+
+<p>
+    With in 250 Enc:
+    <strong class="tier-mid">
+        ¥{{ "{:,.0f}".format(bet.bet_amount * 1.75) }}
+    </strong>
+</p>
+
+<p>
+    Within 100 Enc:
+    <strong class="tier-mid">
+        ¥{{ "{:,.0f}".format(bet.bet_amount * 2.00) }}
+    </strong>
+</p>
+
+<p>
+    Within 50 Enc:
+    <strong class="tier-mid">
+        ¥{{ "{:,.0f}".format(bet.bet_amount * 2.50) }}
+    </strong>
+</p>
+
+<p>
+    Within 10 Enc:
+    <strong class="tier-mid">
+        ¥{{ "{:,.0f}".format(bet.bet_amount * 3.00) }}
+    </strong>
+</p>
+<p class="house-note">
+
+    Final payouts include a 10% house fee deduction.
+
+</p>
     </div>
 
     {% endif %}
@@ -85,6 +133,9 @@
     {% endfor %}
 
 </div>
+
+</div>
+
 <script>
 
 function toggleSidebar() {

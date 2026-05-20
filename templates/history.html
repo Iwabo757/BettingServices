@@ -2,116 +2,132 @@
 <html>
 
 <head>
+
     <title>Bet History</title>
 
     <link rel="stylesheet" href="/static/style.css">
+
 </head>
 
 <body>
+
 <button class="menu-btn" onclick="toggleSidebar()">
     ☰ Menu
 </button>
+
 {% include 'components/sidebar.html' %}
 
 <div class="main">
 
-    <h1>Bet History</h1>
-
-    {% for bet in bets %}
+    <h1 class="section-title">
+        Bet History
+    </h1>
 
     <div class="bets-container">
 
-        <h2>{{ bet.title.title() }}</h2>
+        {% for bet in bets %}
 
-        <img
-            src="https://img.pokemondb.net/sprites/home/shiny/{{ bet.title.lower() }}.png"
-            width="150"
-            style="image-rendering: pixelated;"
-        >
+        <div class="bet-card">
 
-        <p>
-            <strong>Player:</strong>
-            {{ bet.player }}
-        </p>
+            <h2>
+                {{ bet.title.title() }}
+            </h2>
 
-        <p>
-            <strong>Target Encounter:</strong>
-            {{ "{:,}".format(bet.target_encounter) }}
-        </p>
+            <img
+                src="https://img.pokemondb.net/sprites/home/shiny/{{ bet.title.lower() }}.png"
+                width="150"
+                style="image-rendering: pixelated;"
+            >
 
-        <p>
-            <strong>Actual Encounter:</strong>
-            {{ "{:,}".format(bet.actual_encounter) }}
-        </p>
-        <p>
-            <strong>Bet Amount:</strong>
+            <p>
+                <strong>Player:</strong>
+                {{ bet.player }}
+            </p>
 
-            ¥{{ "{:,.0f}".format(bet.bet_amount) }}
-        </p>
-        <p>
-            <strong>Payout:</strong>
+            <p>
+                <strong>Target Encounter:</strong>
+                {{ "{:,}".format(bet.target_encounter) }}
+            </p>
 
-            {% if bet.payout > 0 %}
+            <p>
+                <strong>Actual Encounter:</strong>
+                {{ "{:,}".format(bet.actual_encounter) }}
+            </p>
 
-            <span style="color:#00ff99;">
+            <p>
+                <strong>Bet Amount:</strong>
 
-                ¥{{ "{:,.0f}".format(bet.payout) }}
+                ¥{{ "{:,.0f}".format(bet.bet_amount) }}
+            </p>
 
-            </span>
+            <p>
+                <strong>Payout:</strong>
 
-            {% else %}
+                {% if bet.payout > 0 %}
 
-            <span style="color:#ff5555;">
-                Loss
-            </span>
+                <span class="tier-mid">
+
+                    ¥{{ "{:,.0f}".format(bet.payout) }}
+
+                </span>
+
+                {% else %}
+
+                <span style="color:#ff5555;">
+                    Loss
+                </span>
+
+                {% endif %}
+            </p>
+
+            <p>
+                <strong>Status:</strong>
+
+                {% if bet.status == 'Won' %}
+
+                <span class="tier-mid">
+                    {{ bet.status }}
+                </span>
+
+                {% else %}
+
+                <span style="color:#ff5555;">
+                    {{ bet.status }}
+                </span>
+
+                {% endif %}
+            </p>
+
+            {% if session.get('admin') %}
+
+            <form
+                method="POST"
+                action="/delete_bet/{{ bet.id }}"
+                style="margin-top:20px;"
+            >
+
+                <button
+                    type="submit"
+                    style="
+                        background:#ff4444;
+                        color:white;
+                    "
+                >
+                    Delete Bet
+                </button>
+
+            </form>
 
             {% endif %}
-        </p>
-        <p>
-            <strong>Status:</strong>
 
-            {% if bet.status == 'Won' %}
+        </div>
 
-            <span style="color:#00ff99;">
-                {{ bet.status }}
-            </span>
-
-            {% else %}
-
-            <span style="color:#ff5555;">
-                {{ bet.status }}
-            </span>
-
-            {% endif %}
-        </p>
-
-{% if session.get('admin') %}
-
-<form
-    method="POST"
-    action="/delete_bet/{{ bet.id }}"
-    style="margin-top:20px;"
->
-
-    <button
-        type="submit"
-        style="
-            background:#ff4444;
-            color:white;
-        "
-    >
-        Delete Bet
-    </button>
-
-</form>
-
-{% endif %}
+        {% endfor %}
 
     </div>
 
-    {% endfor %}
-
 </div>
+
 <script>
 
 function toggleSidebar() {
@@ -124,5 +140,7 @@ function toggleSidebar() {
 }
 
 </script>
+
 </body>
+
 </html>

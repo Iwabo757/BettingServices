@@ -19,53 +19,83 @@
 
 <div class="main">
 
-    <h1>Top Players</h1>
+    <h1 class="section-title">
+        Top Players
+    </h1>
 
     {% if users %}
 
+    <div class="bets-container">
+
         {% for user in users %}
 
-        <div class="card">
+        <div class="bet-card leaderboard-card">
 
             <h2>
+
                 #{{ loop.index }}
-                - 
+
+                <br>
+
                 {{ user.username }}
+
             </h2>
 
             <p>
+
                 <strong>Total Profit:</strong>
 
-                ¥{{ "{:,.0f}".format(user.profit or 0) }}
+                <span class="tier-high">
+
+                    ¥{{ "{:,.0f}".format(user.profit or 0) }}
+
+                </span>
+
             </p>
 
             <p>
+
                 <strong>Bets Won:</strong>
 
-                {{ "{:,}".format(user.bets_won or 0) }}
+                <span class="tier-mid">
+
+                    {{ "{:,}".format(user.bets_won or 0) }}
+
+                </span>
+
             </p>
 
             <p>
+
                 <strong>Bets Lost:</strong>
 
-                {{ "{:,}".format(user.bets_lost or 0) }}
+                <span style="color:#ff5555;">
+
+                    {{ "{:,}".format(user.bets_lost or 0) }}
+
+                </span>
+
             </p>
 
         </div>
 
         {% endfor %}
 
+    </div>
+
     {% else %}
 
-        <div class="card">
+    <div class="bet-card">
 
-            <h2>No leaderboard data yet.</h2>
+        <h2>
+            No leaderboard data yet.
+        </h2>
 
-            <p>
-                Settle some bets to generate rankings.
-            </p>
+        <p>
+            Settle some bets to generate rankings.
+        </p>
 
-        </div>
+    </div>
 
     {% endif %}
 
@@ -85,4 +115,5 @@ function toggleSidebar() {
 </script>
 
 </body>
+
 </html>
