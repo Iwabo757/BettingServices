@@ -284,7 +284,7 @@ body {
 
     width: 100%;
 
-    max-width: 1250px;
+    max-width: calc(100vw - 420px);
 
     margin: 0 auto 40px auto;
 
@@ -313,13 +313,11 @@ body {
 
     display: flex;
 
-    gap: 18px;
+    gap: 30px;
 
     width: max-content;
 
-    animation: scrollLoop 45s linear infinite;
-
-    will-change: transform;
+    padding-left: 20px;
 }
 
 @keyframes scrollLoop {
@@ -501,7 +499,7 @@ body {
 
     width: 100%;
 
-    max-width: 1050px;
+    max-width: calc(100vw - 420px);
 
     margin: 40px auto;
 
@@ -509,16 +507,13 @@ body {
 
     border-radius: 25px;
 
-    background:
-        rgba(0,0,0,0.82);
+    background: rgba(0,0,0,0.82);
 
     border: 2px solid #65ff72;
 
     text-align: center;
 
     box-sizing: border-box;
-
-    position: relative;
 }
 
 .live-card img {
