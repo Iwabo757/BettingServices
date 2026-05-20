@@ -54,20 +54,27 @@ body {
 
     background:
         linear-gradient(
-            180deg,
-            rgba(6,6,6,0.94),
-            rgba(12,12,12,0.88)
-        );
+            rgba(0,0,0,0.82),
+            rgba(0,0,0,0.9)
+        ),
 
-    backdrop-filter: blur(14px);
+        url("/static/backgrounds/sidebar-bg.png");
+
+    background-size: cover;
+
+    background-position: center;
+
+    background-repeat: no-repeat;
 
     border-right:
-        1px solid rgba(101,255,114,0.14);
+        1px solid rgba(101,255,114,0.15);
 
     box-shadow:
-        6px 0 35px rgba(0,0,0,0.55),
+        6px 0 30px rgba(0,0,0,0.55);
 
-        inset -1px 0 0 rgba(255,255,255,0.03);
+    overflow: hidden;
+
+    transition: 0.3s;
 }
 
 .sidebar::before {
@@ -83,35 +90,28 @@ body {
     height: 100%;
 
     background:
-        radial-gradient(
-            circle at top left,
-            rgba(101,255,114,0.08),
-            transparent 35%
-        ),
-
-        radial-gradient(
-            circle at bottom,
-            rgba(0,255,180,0.04),
-            transparent 40%
+        linear-gradient(
+            180deg,
+            rgba(0,0,0,0.45),
+            rgba(0,0,0,0.72)
         );
 
     pointer-events: none;
 }
-
 .sidebar h2 {
 
-    font-size: 46px;
+    font-size: 34px;
 
     font-weight: 900;
 
-    margin-bottom: 40px;
+    margin-bottom: 30px;
 
     color: white;
 
-    letter-spacing: -2px;
+    letter-spacing: -1px;
 
-    line-height: 0.9;
-
+    line-height: 1;
+    
     position: relative;
 
     z-index: 2;
@@ -315,8 +315,6 @@ body {
     animation: scrollLoop 45s linear infinite;
 
     will-change: transform;
-
-    padding-left: 120px;
 }
 
 @keyframes scrollLoop {
