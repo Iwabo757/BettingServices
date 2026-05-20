@@ -424,6 +424,17 @@ body {
     box-shadow:
         0 0 20px rgba(0,0,0,0.5);
 }
+.bets-container {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(320px, 1fr));
+
+    gap: 25px;
+
+    width: 100%;
+}
 
 /* LIVE CARD */
 
