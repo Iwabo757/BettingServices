@@ -4,77 +4,45 @@ html {
 
 body {
 
+    margin: 0;
+
+    color: white;
+
+    font-family: Arial, sans-serif;
+
+    overflow-x: hidden;
+
     background:
         linear-gradient(
-            rgba(0,0,0,0.82),
-            rgba(0,0,0,0.9)
+            rgba(0,0,0,0.88),
+            rgba(0,0,0,0.92)
         ),
-
-        url("/static/backgrounds/poker-bg.png");
+        url("/static/images/poker-bg.jpg");
 
     background-size: cover;
 
     background-position: center;
 
     background-attachment: fixed;
-
-    background-repeat: no-repeat;
-
-    color: white;
-
-    font-family: Arial, sans-serif;
-
-    margin: 0;
-
-    overflow-x: hidden;
-
-    display: flex;
 }
+
 
 /* SIDEBAR */
 
 .sidebar {
 
-    width: 240px;
-
-    min-width: 240px;
-
-    height: 100vh;
-
-    position: fixed;
-
-    top: 0;
-    left: 0;
-
-    padding: 25px 20px;
-
-    box-sizing: border-box;
-
-    z-index: 1000;
-
     background:
         linear-gradient(
-            rgba(0,0,0,0.82),
-            rgba(0,0,0,0.9)
+            rgba(0,0,0,0.94),
+            rgba(0,0,0,0.96)
         ),
-
-        url("/static/backgrounds/sidebar-bg.png");
+        url("/static/images/sidebar-bg.png");
 
     background-size: cover;
 
     background-position: center;
 
-    background-repeat: no-repeat;
-
-    border-right:
-        1px solid rgba(101,255,114,0.15);
-
-    box-shadow:
-        6px 0 30px rgba(0,0,0,0.55);
-
-    overflow: hidden;
-
-    transition: 0.3s;
+    backdrop-filter: blur(12px);
 }
 
 .sidebar::before {
@@ -450,25 +418,23 @@ body {
 .bet-card {
 
     background:
-        rgba(0,0,0,0.82);
+        rgba(0,0,0,0.92);
 
     border:
-        1px solid rgba(101,255,114,0.35);
+        1px solid rgba(101,255,114,0.28);
 
-    border-radius: 24px;
+    border-radius: 22px;
 
-    padding: 28px;
-
-    backdrop-filter: blur(8px);
-
-    box-shadow:
-        0 0 25px rgba(0,0,0,0.45);
+    padding: 24px;
 
     text-align: center;
 
-    overflow: hidden;
+    backdrop-filter: blur(10px);
 
-    transition: 0.25s;
+    box-shadow:
+        0 0 30px rgba(0,0,0,0.55);
+
+    overflow: hidden;
 }
 
 .bet-card:hover {
@@ -523,6 +489,18 @@ body {
 .bet-card strong {
 
     color: white;
+}
+
+.bet-card p {
+
+    font-size: 18px;
+
+    line-height: 1.5;
+}
+
+.bet-card h2 {
+
+    font-size: 34px;
 }
 
 /* LIVE CARD */
@@ -830,4 +808,27 @@ button:hover {
             #65ff72,
             #ffd700
         );
+}
+
+input,
+textarea,
+select {
+
+    width: 100%;
+
+    padding: 14px;
+
+    border-radius: 12px;
+
+    border:
+        1px solid rgba(255,255,255,0.12);
+
+    background:
+        rgba(15,15,15,0.96);
+
+    color: white;
+
+    font-size: 16px;
+
+    box-sizing: border-box;
 }

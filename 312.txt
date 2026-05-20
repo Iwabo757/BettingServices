@@ -1,0 +1,48 @@
+body {
+
+    background:
+        linear-gradient(
+            rgba(0,0,0,0.82),
+            rgba(0,0,0,0.9)
+        ),
+
+        url("/static/backgrounds/poker-bg.png");
+
+    background-size: cover;
+
+    background-position: center;
+
+    background-attachment: fixed;
+
+    background-repeat: no-repeat;
+
+    color: white;
+
+    font-family: Arial, sans-serif;
+
+    margin: 0;
+
+    overflow-x: hidden;
+
+    display: flex;
+}
+
+
+.main {
+
+    margin-left: 240px;
+
+    width: calc(100vw - 240px);
+
+    min-height: 100vh;
+
+    padding: 30px;
+
+    box-sizing: border-box;
+
+    display: flex;
+
+    justify-content: center;
+
+    overflow-x: hidden;
+}
