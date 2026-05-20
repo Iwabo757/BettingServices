@@ -369,3 +369,80 @@ button:hover {
 
     line-height: 1.1;
 }
+
+.green-text {
+
+    color: #65ff72;
+
+    text-shadow:
+        0 0 10px rgba(101,255,114,0.5);
+
+}
+.section-title {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 25px;
+
+    margin-bottom: 15px;
+}
+
+.section-title::before,
+.section-title::after {
+
+    content: "";
+
+    width: 90px;
+
+    height: 2px;
+
+    background: linear-gradient(
+        to right,
+        transparent,
+        #65ff72,
+        transparent
+    );
+}
+.live-card {
+
+    margin-top: 30px;
+
+    width: 100%;
+
+    max-width: 1000px;
+
+    padding: 30px;
+
+    border-radius: 25px;
+
+    background: linear-gradient(
+        145deg,
+        #050505,
+        #101010
+    );
+
+    border: 2px solid #65ff72;
+
+    text-align: center;
+
+    box-shadow:
+        0 0 25px rgba(101,255,114,0.18);
+
+}
+.live-card img {
+
+    width: 220px;
+
+    margin-bottom: 15px;
+
+    filter:
+        drop-shadow(0 0 20px rgba(101,255,114,0.5));
+}
+.live-content {
+
+    text-align: left;
+}
