@@ -2,6 +2,8 @@ html {
     scroll-behavior: smooth;
 }
 
+/* BODY */
+
 body {
 
     margin: 0;
@@ -26,21 +28,41 @@ body {
     background-attachment: fixed;
 }
 
-
 /* SIDEBAR */
 
 .sidebar {
 
+    position: fixed;
+
+    top: 0;
+
+    left: 0;
+
+    width: 260px;
+
+    height: 100vh;
+
+    padding: 30px 20px;
+
+    box-sizing: border-box;
+
+    z-index: 1000;
+
+    overflow-y: auto;
+
     background:
         linear-gradient(
-            rgba(0,0,0,0.94),
-            rgba(0,0,0,0.96)
+            rgba(0,0,0,0.88),
+            rgba(0,0,0,0.94)
         ),
         url("/static/images/sidebar-bg.png");
 
     background-size: cover;
 
     background-position: center;
+
+    border-right:
+        1px solid rgba(255,255,255,0.08);
 
     backdrop-filter: blur(12px);
 }
@@ -51,11 +73,7 @@ body {
 
     position: absolute;
 
-    top: 0;
-    left: 0;
-
-    width: 100%;
-    height: 100%;
+    inset: 0;
 
     background:
         linear-gradient(
@@ -66,6 +84,7 @@ body {
 
     pointer-events: none;
 }
+
 .sidebar h2 {
 
     font-size: 34px;
@@ -79,7 +98,9 @@ body {
     letter-spacing: -1px;
 
     line-height: 1;
-    
+
+    white-space: nowrap;
+
     position: relative;
 
     z-index: 2;
@@ -137,32 +158,43 @@ body {
         0 0 18px rgba(101,255,114,0.12);
 }
 
-/* MAIN LAYOUT */
+/* MAIN */
 
 .main {
 
-    margin-left: 240px;
+    margin-left: 260px;
 
-    width: calc(100vw - 240px);
+    width: calc(100% - 260px);
 
     min-height: 100vh;
 
-    padding: 30px;
+    padding: 40px;
 
     box-sizing: border-box;
 
-    display: flex;
+    position: relative;
 
-    justify-content: center;
-
-    overflow-x: hidden;
+    z-index: 1;
 }
+
+.main h1 {
+
+    font-size: 38px;
+
+    margin-bottom: 25px;
+
+    color: white;
+}
+
+/* HOMEPAGE */
 
 .home-main {
 
     width: 100%;
 
     max-width: 1150px;
+
+    margin: 0 auto;
 
     display: flex;
 
@@ -173,7 +205,7 @@ body {
     text-align: center;
 }
 
-/* HERO SECTION */
+/* HERO */
 
 .hero-title {
 
@@ -205,7 +237,7 @@ body {
     margin-bottom: 20px;
 }
 
-/* SECTION TITLE */
+/* SECTION TITLES */
 
 .section-title {
 
@@ -217,7 +249,13 @@ body {
 
     gap: 25px;
 
-    margin-bottom: 15px;
+    margin-bottom: 20px;
+
+    font-size: 48px;
+
+    color: white;
+
+    text-align: center;
 }
 
 .section-title::before,
@@ -229,12 +267,13 @@ body {
 
     height: 2px;
 
-    background: linear-gradient(
-        to right,
-        transparent,
-        #65ff72,
-        transparent
-    );
+    background:
+        linear-gradient(
+            to right,
+            transparent,
+            #65ff72,
+            transparent
+        );
 }
 
 /* HERO BETS */
@@ -288,15 +327,17 @@ body {
 @keyframes scrollLoop {
 
     0% {
+
         transform: translateX(0);
     }
 
     100% {
+
         transform: translateX(-50%);
     }
 }
 
-/* BET CARD */
+/* HOMEPAGE SCROLL CARDS */
 
 .scroll-card {
 
@@ -360,47 +401,14 @@ body {
     margin: 5px 0;
 }
 
-.win-text {
-
-    color: #65ff72 !important;
-
-    font-weight: bold;
-
-    margin-top: 12px;
-}
-
-/* STANDARD CARD */
-
-.card {
-
-    width: 100%;
-
-    background: rgba(10,10,10,0.82);
-
-    backdrop-filter: blur(8px);
-
-    border: 1px solid rgba(101,255,114,0.15);
-
-    border-radius: 18px;
-
-    padding: 20px;
-
-    box-sizing: border-box;
-
-    margin-bottom: 25px;
-
-    box-shadow:
-        0 0 20px rgba(0,0,0,0.5);
-}
-
-/* BET PAGE GRID */
+/* GRID */
 
 .bets-container {
 
     display: grid;
 
     grid-template-columns:
-        repeat(auto-fit, minmax(340px, 1fr));
+        repeat(auto-fit, minmax(280px, 1fr));
 
     gap: 30px;
 
@@ -409,11 +417,9 @@ body {
     max-width: 1400px;
 
     margin: 0 auto;
-
-    padding: 20px;
 }
 
-/* INDIVIDUAL BET CARD */
+/* BET CARDS */
 
 .bet-card {
 
@@ -435,6 +441,8 @@ body {
         0 0 30px rgba(0,0,0,0.55);
 
     overflow: hidden;
+
+    transition: 0.25s;
 }
 
 .bet-card:hover {
@@ -450,7 +458,13 @@ body {
 
 .bet-card img {
 
-    margin: 18px 0;
+    max-width: 150px;
+
+    width: 100%;
+
+    height: auto;
+
+    margin: 18px auto;
 
     filter:
         drop-shadow(0 0 18px rgba(101,255,114,0.35));
@@ -458,35 +472,9 @@ body {
 
 .bet-card h2 {
 
-    font-size: 42px;
+    font-size: 34px;
 
-    margin-bottom: 10px;
-
-    color: white;
-}
-
-.bet-card p {
-
-    font-size: 24px;
-
-    line-height: 1.7;
-
-    color: #e8e8e8;
-}
-
-.bet-card h3 {
-
-    margin-top: 25px;
-
-    font-size: 30px;
-
-    color: #65ff72;
-
-    text-shadow:
-        0 0 10px rgba(101,255,114,0.3);
-}
-
-.bet-card strong {
+    margin-bottom: 15px;
 
     color: white;
 }
@@ -496,11 +484,17 @@ body {
     font-size: 18px;
 
     line-height: 1.5;
+
+    color: #e8e8e8;
 }
 
-.bet-card h2 {
+.bet-card h3 {
 
-    font-size: 34px;
+    margin-top: 25px;
+
+    font-size: 28px;
+
+    color: #65ff72;
 }
 
 /* LIVE CARD */
@@ -517,11 +511,8 @@ body {
 
     border-radius: 25px;
 
-    background: linear-gradient(
-        145deg,
-        #050505,
-        #101010
-    );
+    background:
+        rgba(0,0,0,0.92);
 
     border: 2px solid #65ff72;
 
@@ -547,6 +538,7 @@ body {
 
     margin-bottom: 10px;
 }
+
 .live-card p {
 
     color: #f5f5f5;
@@ -557,47 +549,12 @@ body {
 
     font-weight: 500;
 
-    letter-spacing: 0.3px;
-
     max-width: 900px;
 
     margin: 0 auto;
-
-    text-shadow:
-        0 0 8px rgba(255,255,255,0.08);
-
-}
-.live-card strong {
-
-    color: #65ff72;
-
-    font-weight: 800;
-
-    text-shadow:
-        0 0 10px rgba(101,255,114,0.55);
 }
 
-.live-card .multiplier {
-
-    color: #65ff72;
-
-    font-weight: 800;
-
-    text-shadow:
-        0 0 12px rgba(101,255,114,0.45);
-}
-
-.live-card .warning {
-
-    color: #ffb347;
-
-    font-weight: 700;
-
-    text-shadow:
-        0 0 10px rgba(255,179,71,0.25);
-}
-
-/* FORMS */
+/* INPUTS */
 
 input,
 textarea,
@@ -605,21 +562,32 @@ select {
 
     width: 100%;
 
-    max-width: 400px;
+    padding: 14px;
 
-    padding: 12px;
+    border-radius: 12px;
 
-    background: #222;
+    border:
+        1px solid rgba(255,255,255,0.12);
 
-    border: 1px solid #444;
+    background:
+        rgba(15,15,15,0.96);
 
     color: white;
-
-    border-radius: 8px;
 
     font-size: 16px;
 
     box-sizing: border-box;
+}
+
+input:focus,
+textarea:focus {
+
+    outline: none;
+
+    border-color: #65ff72;
+
+    box-shadow:
+        0 0 10px rgba(101,255,114,0.25);
 }
 
 /* BUTTONS */
@@ -646,10 +614,11 @@ button {
 }
 
 button:hover {
+
     opacity: 0.9;
 }
 
-/* MOBILE MENU BUTTON */
+/* MENU BUTTON */
 
 .menu-btn {
 
@@ -658,6 +627,7 @@ button:hover {
     position: fixed;
 
     top: 15px;
+
     left: 15px;
 
     background: #65ff72;
@@ -675,25 +645,55 @@ button:hover {
     z-index: 2000;
 }
 
+/* TIERS */
+
+.tier-low {
+
+    color: white;
+}
+
+.tier-mid {
+
+    color: #65ff72;
+}
+
+.tier-high {
+
+    color: #ffd700;
+}
+
+.house-note {
+
+    margin-top: 20px;
+
+    font-size: 14px;
+
+    color: #ffb347;
+}
+
 /* MOBILE */
 
 @media (max-width: 900px) {
 
     .sidebar {
 
-        left: -260px;
+        transform: translateX(-100%);
+
+        transition: 0.25s;
     }
 
     .sidebar.active {
 
-        left: 0;
+        transform: translateX(0);
     }
 
     .main {
 
         margin-left: 0;
 
-        padding: 90px 20px 20px 20px;
+        width: 100%;
+
+        padding: 20px;
     }
 
     .menu-btn {
@@ -711,13 +711,6 @@ button:hover {
         font-size: 16px;
     }
 
-    .scroll-card {
-
-        width: 140px;
-
-        min-width: 140px;
-    }
-
     .live-card {
 
         padding: 20px;
@@ -732,103 +725,4 @@ button:hover {
 
         width: 140px;
     }
-
-    img {
-
-        max-width: 100%;
-
-        height: auto;
-    }
-}
-
-/* BET TIER */
-
-.tier-low {
-
-    color: #ffffff;
-}
-
-.tier-mid {
-
-    color: #65ff72;
-
-    text-shadow:
-        0 0 10px rgba(101,255,114,0.35);
-}
-
-.tier-high {
-
-    color: #ffd700;
-
-    text-shadow:
-        0 0 12px rgba(255,215,0,0.45);
-}
-.house-note {
-
-    margin-top: 20px;
-
-    font-size: 14px;
-
-    color: #ffb347;
-
-    opacity: 0.9;
-}
-
-/* LEADERBOARD */
-
-.leaderboard-card h2 {
-
-    font-size: 38px;
-
-    margin-bottom: 20px;
-}
-
-.leaderboard-card {
-
-    position: relative;
-
-    overflow: hidden;
-}
-
-.leaderboard-card::before {
-
-    content: "";
-
-    position: absolute;
-
-    top: 0;
-    left: 0;
-
-    width: 100%;
-    height: 4px;
-
-    background:
-        linear-gradient(
-            90deg,
-            #65ff72,
-            #ffd700
-        );
-}
-
-input,
-textarea,
-select {
-
-    width: 100%;
-
-    padding: 14px;
-
-    border-radius: 12px;
-
-    border:
-        1px solid rgba(255,255,255,0.12);
-
-    background:
-        rgba(15,15,15,0.96);
-
-    color: white;
-
-    font-size: 16px;
-
-    box-sizing: border-box;
 }
