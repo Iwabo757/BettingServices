@@ -6,8 +6,8 @@ body {
 
     background:
         linear-gradient(
-            rgba(0,0,0,0.78),
-            rgba(0,0,0,0.88)
+            rgba(0,0,0,0.82),
+            rgba(0,0,0,0.9)
         ),
 
         url("/static/backgrounds/poker-bg.png");
@@ -27,26 +27,30 @@ body {
     margin: 0;
 
     overflow-x: hidden;
+
+    display: flex;
 }
+
 /* SIDEBAR */
 
 .sidebar {
+
     width: 240px;
+
+    min-width: 240px;
+
     height: 100vh;
 
     position: fixed;
-    top: 0;
+
     left: 0;
+    top: 0;
 
     background: rgba(5,5,5,0.92);
 
     padding: 20px;
 
-    overflow-y: auto;
-
     box-sizing: border-box;
-
-    transition: 0.3s;
 
     z-index: 1000;
 }
@@ -79,11 +83,17 @@ body {
 
     margin-left: 240px;
 
+    width: calc(100vw - 240px);
+
     min-height: 100vh;
 
-    padding: 30px 25px;
+    padding: 30px;
 
     box-sizing: border-box;
+
+    display: flex;
+
+    justify-content: center;
 
     overflow-x: hidden;
 }
@@ -92,9 +102,7 @@ body {
 
     width: 100%;
 
-    max-width: 980px;
-
-    margin: 0 auto;
+    max-width: 1150px;
 
     display: flex;
 
