@@ -612,44 +612,6 @@ button:hover {
     }
 }
 
-/* MOBILE */
-
-@media (max-width: 900px) {
-
-    .sidebar {
-
-        transform: translateX(-100%);
-
-        transition: 0.25s;
-    }
-
-    .sidebar.active {
-
-        transform: translateX(0);
-    }
-
-    .main,
-    .home-main {
-
-        margin-left: 0;
-
-        width: 100%;
-
-        padding: 20px;
-    }
-
-    .bets-container {
-
-        grid-template-columns:
-            repeat(auto-fit, minmax(160px, 1fr));
-    }
-
-    .menu-btn {
-
-        display: block;
-    }
-}
-
 .danger-btn {
 
     background: #ff3b3b;
@@ -685,11 +647,11 @@ button:hover {
 
     position: fixed;
 
-    top: 14px;
+    top: 12px;
 
-    left: 14px;
+    left: 12px;
 
-    z-index: 5000;
+    z-index: 9999;
 
     background: rgba(0,0,0,0.92);
 
@@ -707,7 +669,7 @@ button:hover {
 
     cursor: pointer;
 
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(8px);
 }
 
 @media screen and (max-width: 900px) {
@@ -731,9 +693,11 @@ button:hover {
 
         transform: translateX(-100%) !important;
 
-        transition: transform 0.25s ease;
+        transition: transform 0.25s ease !important;
 
         z-index: 4000;
+
+        margin: 0 !important;
     }
 
     .sidebar.active {
