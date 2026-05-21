@@ -38,7 +38,7 @@ body {
 
     left: 0;
 
-    width: 180px;
+    width: 150px;
 
     height: 100vh;
 
@@ -90,7 +90,7 @@ body {
 }
 .sidebar h2 {
 
-    font-size: 28px;
+    font-size: 24px;
 
     font-weight: 900;
 
@@ -171,7 +171,7 @@ body {
 
 .main {
 
-    margin-left: 180px;
+    margin-left: 150px;
 
     padding: 30px;
 
@@ -181,7 +181,7 @@ body {
 
     position: relative;
 
-    width: calc(100% - 180px);
+    width: calc(100% - 150px);
 
     max-width: 100%;
 }
@@ -199,9 +199,9 @@ body {
 
 .home-main {
 
-    margin-left: 180px;
+    margin-left: 150px;
 
-    width: calc(100% - 180px);
+    width: calc(100% - 150px);
 
     padding: 40px;
 
@@ -440,9 +440,9 @@ body {
     display: grid;
 
     grid-template-columns:
-        repeat(auto-fit, minmax(240px, 1fr));
+        repeat(auto-fit, minmax(180px, 1fr));
 
-    gap: 16px;
+    gap: 14px;
 
     width: 100%;
 
@@ -457,20 +457,18 @@ body {
 
     border: 1px solid rgba(101,255,114,0.28);
 
-    border-radius: 22px;
+    border-radius: 20px;
 
-    padding: 14px;
+    padding: 12px;
 
     text-align: center;
 
     backdrop-filter: blur(10px);
 
     box-shadow:
-        0 0 30px rgba(0,0,0,0.55);
+        0 0 20px rgba(0,0,0,0.45);
 
     width: 100%;
-
-    max-width: none;
 
     min-height: auto;
 
