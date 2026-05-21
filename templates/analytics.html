@@ -2,11 +2,13 @@
 <html>
 
 <head>
+
     <title>Analytics</title>
 
     <link rel="stylesheet" href="/static/style.css">
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
 </head>
 
 <body>
@@ -21,44 +23,60 @@
 
     <h1>House Analytics</h1>
 
-<div class="bets-container">
+    <div class="bets-container">
 
-    {% for bet in bets %}
+        <div class="bet-card analytics-card">
 
-    <div class="bet-card">
+            <h2>Total House Earnings</h2>
 
-    <h2>Total House Earnings</h2>
+            <h1 class="profit-text">
+                ¥{{ "{:,.0f}".format(house_profit) }}
+            </h1>
 
-    <h1 style="color:#00ff99;">
+            <p>
+                Total Bet Volume:
+                <strong>
+                    ¥{{ "{:,.0f}".format(total_bets) }}
+                </strong>
+            </p>
 
-        ¥{{ "{:,.0f}".format(house_profit) }}
+            <p>
+                Total Paid Out:
+                <strong>
+                    ¥{{ "{:,.0f}".format(total_payouts) }}
+                </strong>
+            </p>
 
-    </h1>
+            <p>
+                House Win Rate:
+                <strong>
+                    {{ losses }}
+                </strong>
+            </p>
 
-    <p>
-        Total Bet Volume:
-        ¥{{ "{:,.0f}".format(total_bets) }}
-    </p>
+            <p>
+                Player Win Rate:
+                <strong>
+                    {{ wins }}
+                </strong>
+            </p>
 
-    <p>
-        Total Paid Out:
-        ¥{{ "{:,.0f}".format(total_payouts) }}
-    </p>
+        </div>
 
-</div>
-    <div class="card">
+        <div class="card analytics-chart-card">
 
-        <canvas id="profitChart"></canvas>
+            <canvas id="profitChart"></canvas>
+
+        </div>
 
     </div>
 
 </div>
 
-</div>
-
 <script>
 
-const ctx = document.getElementById('profitChart');
+const ctx =
+    document.getElementById('profitChart');
 
 new Chart(ctx, {
 
@@ -85,16 +103,19 @@ new Chart(ctx, {
             backgroundColor: [
 
                 '#00ff99',
-                '#ff5555'
+                '#ff4444'
 
             ],
 
             borderWidth: 0
 
         }]
+
     },
 
     options: {
+
+        responsive: true,
 
         plugins: {
 
@@ -103,8 +124,11 @@ new Chart(ctx, {
                 labels: {
 
                     color: 'white',
+
                     font: {
+
                         size: 16
+
                     }
 
                 }
@@ -117,9 +141,6 @@ new Chart(ctx, {
 
 });
 
-</script>
-<script>
-
 function toggleSidebar() {
 
     document
@@ -130,5 +151,6 @@ function toggleSidebar() {
 }
 
 </script>
+
 </body>
 </html>

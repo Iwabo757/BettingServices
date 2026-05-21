@@ -843,6 +843,31 @@ button:hover {
 
     margin-right: auto;
 }
+
+/* ANALYTICS */
+.analytics-card {
+
+    min-width: 320px;
+    max-width: 500px;
+    margin: auto;
+
+}
+
+.analytics-chart-card {
+
+    width: 500px;
+    max-width: 90vw;
+    margin: auto;
+
+}
+
+.profit-text {
+
+    color: #00ff99;
+    text-shadow: 0 0 15px #00ff99;
+
+}
+
 .tier-low {
 
     color: #66ff99 !important;
