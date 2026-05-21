@@ -38,11 +38,13 @@ body {
 
     left: 0;
 
-    width: 150px;
+    width: 180px;
+
+    min-width: 220px;
 
     height: 100vh;
 
-    padding: 30px 20px;
+    padding: 18px 14px;
 
     padding-top: 18px;
 
@@ -102,11 +104,11 @@ body {
 
     letter-spacing: -1px;
 
-    word-break: break-word;
+    word-break: keep-all;
 
     white-space: normal;
 
-    overflow-wrap: break-word;
+    overflow-wrap: normal;
 
     position: relative;
 
@@ -171,7 +173,7 @@ body {
 
 .main {
 
-    margin-left: 150px;
+    margin-left: 180px;
 
     padding: 30px;
 
@@ -181,7 +183,7 @@ body {
 
     position: relative;
 
-    width: calc(100% - 150px);
+    width: calc(100% - 180px);
 
     max-width: 100%;
 }
@@ -199,11 +201,11 @@ body {
 
 .home-main {
 
-    margin-left: 150px;
+    margin-left: 180px;
 
-    width: calc(100% - 150px);
+    width: calc(100% - 180px);
 
-    padding: 40px;
+    padding: 24px;
 
     box-sizing: border-box;
 
@@ -440,9 +442,9 @@ body {
     display: grid;
 
     grid-template-columns:
-        repeat(auto-fit, minmax(180px, 1fr));
+        repeat(auto-fit, minmax(320px, 1fr));
 
-    gap: 14px;
+    gap: 24px;
 
     width: 100%;
 
@@ -469,6 +471,8 @@ body {
         0 0 20px rgba(0,0,0,0.45);
 
     width: 100%;
+
+    max-width: 100%;
 
     min-height: auto;
 
