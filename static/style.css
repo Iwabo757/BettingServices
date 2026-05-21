@@ -88,7 +88,7 @@ body {
 }
 .sidebar h2 {
 
-    font-size: 22px;
+    font-size: 18px;
 
     font-weight: 900;
 
@@ -131,11 +131,11 @@ body {
 
     text-decoration: none;
 
-    font-size: 17px;
+    font-size: 15px;
 
-    padding: 14px 16px;
+    padding: 12px 14px;
 
-    margin-bottom: 10px;
+    margin: 6px 0;
 
     border-radius: 14px;
 
@@ -442,7 +442,7 @@ body {
     grid-template-columns:
         repeat(auto-fit, minmax(280px, 1fr));
 
-    gap: 30px;
+    gap: 20px;
 
     width: 100%;
 
@@ -463,7 +463,7 @@ body {
 
     border-radius: 22px;
 
-    padding: 20px;
+    padding: 18px;
 
     text-align: center;
 
@@ -474,7 +474,7 @@ body {
 
     min-height: auto;
 
-    max-width: 650px;
+    max-width: 360px;
 
     overflow: hidden;
 
@@ -494,7 +494,7 @@ body {
 
 .bet-card img {
 
-    max-width: 150px;
+    max-width: 100px;
 
     width: 100%;
 
@@ -508,7 +508,7 @@ body {
 
 .bet-card h2 {
 
-    font-size: 24px;
+    font-size: 14px;
 
     margin-bottom: 10px;
 
