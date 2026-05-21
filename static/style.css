@@ -38,7 +38,7 @@ body {
 
     left: 0;
 
-    width: 260px;
+    width: 220px;
 
     height: 100vh;
 
@@ -88,7 +88,7 @@ body {
 }
 .sidebar h2 {
 
-    font-size: 28px;
+    font-size: 24px;
 
     font-weight: 900;
 
@@ -167,7 +167,7 @@ body {
 
 .main {
 
-    margin-left: 260px;
+    margin-left: 220px;
 
     padding: 30px;
 
@@ -177,7 +177,7 @@ body {
 
     position: relative;
 
-    width: calc(100% - 260px);
+    width: calc(100% - 220px);
 
     max-width: 100%;
 }
@@ -195,9 +195,9 @@ body {
 
 .home-main {
 
-    margin-left: 260px;
+    margin-left: 220px;
 
-    width: calc(100% - 260px);
+    width: calc(100% - 220px);
 
     padding: 40px;
 
