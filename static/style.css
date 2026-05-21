@@ -688,14 +688,35 @@ button:hover {
         left: -240px !important;
 
         width: 220px !important;
-
+  
         height: 100vh !important;
+
+        padding: 18px 14px !important;
+
+        box-sizing: border-box !important;
+
+        overflow-y: auto !important;
+
+        overflow-x: hidden !important;
+
+        z-index: 9998 !important;
 
         transition: left 0.25s ease !important;
 
-        z-index: 4000 !important;
+        background:
+            linear-gradient(
+                rgba(0,0,0,0.58),
+                rgba(0,0,0,0.76)
+            ),
+            url("/static/images/sidebar-bg.png");
 
-        margin: 0 !important;
+        background-size: cover !important;
+
+        background-position: center !important;
+
+        background-repeat: no-repeat !important;
+
+        backdrop-filter: blur(10px) !important;
     }
 
     .sidebar.active {
