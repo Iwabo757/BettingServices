@@ -40,8 +40,6 @@ body {
 
     width: 180px;
 
-    min-width: 220px;
-
     height: 100vh;
 
     padding: 18px 14px;
@@ -92,23 +90,21 @@ body {
 }
 .sidebar h2 {
 
-    font-size: 24px;
+    font-size: 28px;
 
     font-weight: 900;
 
-    margin-bottom: 18px;
-
-    color: white;
-
-    line-height: 1;
+    line-height: 0.95;
 
     letter-spacing: -1px;
 
-    word-break: keep-all;
+    margin-bottom: 18px;
 
     white-space: normal;
 
-    overflow-wrap: normal;
+    word-break: keep-all;
+
+    overflow-wrap: break-word;
 
     position: relative;
 
@@ -122,32 +118,31 @@ body {
     text-shadow:
         0 0 14px rgba(101,255,114,0.55);
 }
-
 .sidebar a {
 
     display: flex;
 
     align-items: center;
 
-    gap: 12px;
+    gap: 8px;
 
     color: #d8d8d8;
 
     text-decoration: none;
 
-    font-size: 11px;
+    font-size: 10px;
 
-    padding: 4px 08px;
+    padding: 5px 8px;
 
-    margin: 1px 0;
+    margin: 2px 0;
 
-    border-radius: 14px;
+    border-radius: 10px;
 
     transition: 0.25s;
 
     position: relative;
 
-    line-height: 1;
+    line-height: 1.1;
 
     z-index: 2;
 }
@@ -442,9 +437,11 @@ body {
     display: grid;
 
     grid-template-columns:
-        repeat(auto-fit, minmax(320px, 1fr));
+        repeat(auto-fit, minmax(260px, 300px));
 
-    gap: 24px;
+    justify-content: flex-start;
+
+    gap: 18px;
 
     width: 100%;
 
@@ -461,7 +458,7 @@ body {
 
     border-radius: 20px;
 
-    padding: 12px;
+    padding: 14px;
 
     text-align: center;
 
@@ -472,15 +469,14 @@ body {
 
     width: 100%;
 
-    max-width: 100%;
-
-    min-height: auto;
+    min-width: 0;
 
     overflow: hidden;
 
     transition: 0.25s;
-}
 
+    box-sizing: border-box;
+}
 .bet-card:hover {
 
     transform: translateY(-4px);
