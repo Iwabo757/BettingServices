@@ -11,19 +11,6 @@
 
 <body>
 
-<form
-    action="/reset_leaderboard"
-    method="POST"
-    onsubmit="return confirm('Reset entire leaderboard?');"
->
-
-    <button class="danger-btn">
-
-        Reset Leaderboard
-
-    </button>
-
-</form>
 
 <button class="menu-btn" onclick="toggleSidebar()">
     ☰ Menu
@@ -36,6 +23,19 @@
     <h1 class="section-title">
         Admin Dashboard
     </h1>
+    <form
+        action="/reset_leaderboard"
+        method="POST"
+        onsubmit="return confirm('Reset entire leaderboard?');"
+    >
+
+        <button class="danger-btn">
+
+            Reset Leaderboard
+
+        </button>
+
+    </form>
 
     <!-- CREATE BET -->
 
