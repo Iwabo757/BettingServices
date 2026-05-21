@@ -717,11 +717,40 @@ button:hover {
 
     .sidebar {
 
+        position: fixed;
+
+        top: 0;
+
+        left: 0;
+
+        width: 220px;
+
+        height: 100vh;
+
         transform: translateX(-100%);
 
         transition: transform 0.25s ease;
 
-        width: 220px;
+        z-index: 1500;
+
+        overflow-y: auto;
+
+        overflow-x: hidden;
+
+        background:
+            linear-gradient(
+                rgba(0,0,0,0.58),
+                rgba(0,0,0,0.76)
+            ),
+            url("/static/images/sidebar-bg.png");
+
+        background-size: cover;
+
+        background-position: center;
+
+        background-repeat: no-repeat;
+
+        backdrop-filter: blur(10px);
     }
 
     .sidebar.active {
@@ -735,6 +764,8 @@ button:hover {
         margin-left: 0;
 
         width: 100%;
+
+        background: transparent;
 
         padding: 70px 12px 12px 12px;
     }
