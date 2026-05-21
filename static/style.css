@@ -38,7 +38,7 @@ body {
 
     left: 0;
 
-    width: 220px;
+    width: 180px;
 
     height: 100vh;
 
@@ -88,7 +88,7 @@ body {
 }
 .sidebar h2 {
 
-    font-size: 24px;
+    font-size: 22px;
 
     font-weight: 900;
 
@@ -167,7 +167,7 @@ body {
 
 .main {
 
-    margin-left: 220px;
+    margin-left: 180px;
 
     padding: 30px;
 
@@ -177,9 +177,13 @@ body {
 
     position: relative;
 
-    width: calc(100% - 220px);
+    width: calc(100% - 180px);
 
     max-width: 100%;
+
+    transform: scale(0.92);
+
+    transform-origin: top left;
 }
 
 .main h1 {
@@ -195,9 +199,9 @@ body {
 
 .home-main {
 
-    margin-left: 220px;
+    margin-left: 180px;
 
-    width: calc(100% - 220px);
+    width: calc(100% - 180px);
 
     padding: 40px;
 
@@ -467,6 +471,10 @@ body {
 
     box-shadow:
         0 0 30px rgba(0,0,0,0.55);
+
+    min-height: auto;
+
+    max-width: 650px;
 
     overflow: hidden;
 
