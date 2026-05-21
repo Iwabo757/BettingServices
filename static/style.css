@@ -38,19 +38,19 @@ body {
 
     left: 0;
 
-    width: 190px;
+    width: 200px;
 
     height: 100vh;
 
     padding: 18px 14px;
 
-    padding-top: 18px;
-
     box-sizing: border-box;
 
     z-index: 1000;
 
-    overflow: hidden;
+    overflow-y: auto;
+
+    overflow-x: hidden;
 
     background:
         linear-gradient(
@@ -91,26 +91,23 @@ body {
 
 .sidebar h2 {
 
-    font-size: 28px;
+    font-size: 32px;
 
     font-weight: 900;
 
-    line-height: 1;
+    line-height: 0.95;
 
     letter-spacing: -1px;
 
-    margin-bottom: 18px;
+    margin-bottom: 22px;
 
-    white-space: normal;
-
-    word-break: keep-all;
-
-    overflow-wrap: break-word;
+    white-space: nowrap;
 
     position: relative;
 
     z-index: 2;
 }
+
 .sidebar h2 span {
 
     color: #65ff72;
@@ -118,6 +115,9 @@ body {
     text-shadow:
         0 0 14px rgba(101,255,114,0.55);
 }
+
+/* SIDEBAR LINKS */
+
 .sidebar a {
 
     display: flex;
@@ -128,17 +128,19 @@ body {
 
     text-decoration: none;
 
-    font-size: 12px;
+    font-size: 14px;
 
-    padding: 4px 7px;
+    padding: 6px 6px;
 
-    margin: 1px 0;
+    margin: 2px 0;
 
     border-radius: 8px;
 
     transition: 0.25s;
 
-    line-height: 1;
+    line-height: 1.1;
+
+    position: relative;
 
     z-index: 2;
 }
@@ -163,37 +165,24 @@ body {
 
 .main {
 
-    margin-left: 190px;
+    margin-left: 200px;
 
-    padding: 30px;
+    width: calc(100% - 200px);
+
+    padding: 18px;
 
     min-height: 100vh;
 
     box-sizing: border-box;
 
     position: relative;
-
-    width: calc(100% - 190px);
-
-    max-width: 100%;
 }
-
-.main h1 {
-
-    font-size: 38px;
-
-    margin-bottom: 25px;
-
-    color: white;
-}
-
-/* HOMEPAGE */
 
 .home-main {
 
-    margin-left: 190px;
+    margin-left: 200px;
 
-    width: calc(100% - 190px);
+    width: calc(100% - 200px);
 
     padding: 24px;
 
@@ -207,11 +196,16 @@ body {
 
     align-items: center;
 
-    justify-content: center;
-
     text-align: center;
+}
 
-    box-sizing: border-box;
+.main h1 {
+
+    font-size: 38px;
+
+    margin-bottom: 25px;
+
+    color: white;
 }
 
 /* HERO */
@@ -246,185 +240,6 @@ body {
     margin-bottom: 20px;
 }
 
-/* SECTION TITLES */
-
-.section-title {
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    gap: 25px;
-
-    margin-bottom: 20px;
-
-    font-size: 38px;
-
-    color: white;
-
-    text-align: center;
-}
-
-.section-title::before,
-.section-title::after {
-
-    content: "";
-
-    width: 90px;
-
-    height: 2px;
-
-    background:
-        linear-gradient(
-            to right,
-            transparent,
-            #65ff72,
-            transparent
-        );
-}
-
-/* HERO BETS */
-
-.hero-bets {
-
-    width: calc(100vw - 340px);
-
-    max-width: 1400px;
-
-    min-width: 0;
-
-    overflow: hidden;
-
-    margin: 0 auto 40px auto;
-
-    box-sizing: border-box;
-}
-
-.active-count {
-
-    color: #aaa;
-
-    margin-bottom: 20px;
-}
-
-/* SCROLLER */
-
-.bet-scroll {
-
-    width: 100%;
-
-    overflow: hidden;
-
-    display: flex;
-
-    justify-content: center;
-
-    position: relative;
-}
-
-.bet-track {
-
-    display: flex;
-
-    gap: 30px;
-
-    width: max-content;
-
-    animation: scrollBets 40s linear infinite;
-
-    padding-left: 120px;
-
-    padding-right: 120px;
-
-    box-sizing: border-box;
-}
-
-.bet-card strong {
-
-    color: #65ff72;
-
-    text-shadow: 0 0 10px rgba(101,255,114,0.7);
-
-}
-@keyframes scrollBets {
-
-    0% {
-
-        transform: translateX(0);
-    }
-
-    100% {
-
-        transform: translateX(-50%);
-    }
-}
-
-/* HOMEPAGE SCROLL CARDS */
-
-.scroll-card {
-
-    width: 160px;
-
-    min-width: 160px;
-
-    padding: 16px 12px;
-
-    border-radius: 22px;
-
-    background: rgba(10,10,10,0.72);
-
-    backdrop-filter: blur(6px);
-
-    border: 1px solid rgba(101,255,114,0.25);
-
-    text-align: center;
-
-    flex-shrink: 0;
-
-    transition: 0.3s;
-
-    box-shadow:
-        0 0 20px rgba(0,0,0,0.45);
-}
-
-.scroll-card:hover {
-
-    transform: translateY(-5px);
-
-    border-color: #65ff72;
-
-    box-shadow:
-        0 0 20px rgba(101,255,114,0.25);
-}
-
-.scroll-card img {
-
-    width: 60px;
-
-    margin-bottom: 10px;
-
-    filter:
-        drop-shadow(0 0 10px rgba(101,255,114,0.35));
-}
-
-.scroll-card h2 {
-
-    font-size: 16px;
-
-    margin: 8px 0;
-}
-
-.scroll-card p {
-
-    font-size: 12px;
-
-    color: #ccc;
-
-    margin: 5px 0;
-}
-
 /* GRID */
 
 .bets-container {
@@ -432,17 +247,17 @@ body {
     display: grid;
 
     grid-template-columns:
-        repeat(auto-fit, minmax(200px, 240px));
+        repeat(auto-fill, minmax(200px, 1fr));
 
-    gap: 18px;
+    gap: 14px;
 
     width: 100%;
 
+    max-width: 1400px;
+
+    margin: 0 auto;
+
     align-items: start;
-
-    justify-items: center;
-
-    justify-content: center;
 }
 
 /* BET CARDS */
@@ -453,9 +268,9 @@ body {
 
     border: 1px solid rgba(101,255,114,0.28);
 
-    border-radius: 20px;
+    border-radius: 18px;
 
-    padding: 14px;
+    padding: 8px;
 
     text-align: center;
 
@@ -466,9 +281,17 @@ body {
 
     width: 100%;
 
+    max-width: 220px;
+
+    margin: 0 auto;
+
+    min-width: 0;
+
     overflow: hidden;
 
-    transition: 0.25s;
+    transition:
+        transform 0.25s,
+        box-shadow 0.25s;
 
     box-sizing: border-box;
 }
@@ -486,13 +309,13 @@ body {
 
 .bet-card img {
 
-    max-width: 100px;
+    max-width: 64px;
 
     width: 100%;
 
     height: auto;
 
-    margin: 18px auto;
+    margin: 14px auto;
 
     filter:
         drop-shadow(0 0 18px rgba(101,255,114,0.35));
@@ -500,7 +323,7 @@ body {
 
 .bet-card h2 {
 
-    font-size: 14px;
+    font-size: 16px;
 
     margin-bottom: 10px;
 
@@ -509,20 +332,19 @@ body {
 
 .bet-card p {
 
-    font-size: 15px;
+    font-size: 12px;
 
     line-height: 1.4;
 
     color: #e8e8e8;
 }
 
-.bet-card h3 {
-
-    margin-top: 25px;
-
-    font-size: 28px;
+.bet-card strong {
 
     color: #65ff72;
+
+    text-shadow:
+        0 0 10px rgba(101,255,114,0.7);
 }
 
 /* LIVE CARD */
@@ -550,78 +372,6 @@ body {
     overflow-wrap: break-word;
 
     overflow-x: hidden;
-}
-
-.live-card img {
-
-    width: 180px;
-
-    margin-bottom: 10px;
-
-    filter:
-        drop-shadow(0 0 20px rgba(101,255,114,0.45));
-}
-
-.live-card h2 {
-
-    font-size: 36px;
-
-    margin-bottom: 10px;
-}
-
-.live-card p {
-
-    color: #f5f5f5;
-
-    font-size: 20px;
-
-    line-height: 1.8;
-
-    font-weight: 500;
-
-    max-width: 850px;
-
-    margin: 0 auto;
-
-    text-align: center;
-
-    box-sizing: border-box;
-}
-
-/* INPUTS */
-
-input,
-textarea,
-select {
-
-    width: 100%;
-
-    padding: 14px;
-
-    border-radius: 12px;
-
-    border:
-        1px solid rgba(255,255,255,0.12);
-
-    background:
-        rgba(15,15,15,0.96);
-
-    color: white;
-
-    font-size: 16px;
-
-    box-sizing: border-box;
-}
-
-input:focus,
-textarea:focus {
-
-    outline: none;
-
-    border-color: #65ff72;
-
-    box-shadow:
-        0 0 10px rgba(101,255,114,0.25);
 }
 
 /* BUTTONS */
@@ -652,112 +402,8 @@ button:hover {
     opacity: 0.9;
 }
 
-/* MENU BUTTON */
+/* PAYOUT BUTTON */
 
-.menu-btn {
-
-    display: none;
-
-    position: fixed;
-
-    top: 15px;
-
-    left: 15px;
-
-    background: #65ff72;
-
-    color: black;
-
-    border: none;
-
-    padding: 12px 16px;
-
-    border-radius: 10px;
-
-    font-weight: bold;
-
-    z-index: 2000;
-}
-
-/* TIERS */
-
-.tier-low {
-
-    color: white;
-}
-
-.tier-mid {
-
-    color: #65ff72;
-}
-
-.tier-high {
-
-    color: #ffd700;
-}
-
-.house-note {
-
-    margin-top: 20px;
-
-    font-size: 14px;
-
-    color: #ffb347;
-}
-
-/* MOBILE */
-
-@media (max-width: 900px) {
-
-    .sidebar {
-
-        transform: translateX(-100%);
-
-        transition: 0.25s;
-    }
-
-    .sidebar.active {
-
-        transform: translateX(0);
-    }
-
-    .main {
-
-        margin-left: 0;
-
-        padding: 20px;
-    }
-
-    .menu-btn {
-
-        display: block;
-    }
-
-    .hero-title {
-
-        font-size: 38px;
-    }
-
-    .hero-subtitle {
-
-        font-size: 16px;
-    }
-
-    .live-card {
-
-        padding: 20px;
-    }
-
-    .live-card h2 {
-
-        font-size: 28px;
-    }
-
-    .live-card img {
-
-        width: 140px;
-    }
-}
 .payout-toggle {
 
     width: 100%;
@@ -786,6 +432,8 @@ button:hover {
     background: #1a1a1a;
 }
 
+/* PAYOUT CONTENT */
+
 .payout-content {
 
     display: none;
@@ -797,78 +445,29 @@ button:hover {
 
 .payout-content.active {
 
+.payout-content {
+
+    max-height: 0;
+
+    overflow: hidden;
+
+    opacity: 0;
+
+    transition:
+        max-height 0.35s ease,
+        opacity 0.25s ease;
+}
+
+.payout-content.active {
+
+    max-height: 2000px;
+
+    opacity: 1;
+}
     display: block;
 }
 
-.tier-low {
-
-    color: #7dff7d;
-}
-
-.tier-mid {
-
-    color: #ffd447;
-}
-
-.tier-high {
-
-    color: #ff9f43;
-}
-
-.tier-jackpot {
-
-    color: #ff5cff;
-
-    text-shadow: 0 0 10px #ff5cff;
-}
-
-@keyframes fadeIn {
-
-    from {
-
-        opacity: 0;
-
-        transform: translateY(-10px);
-    }
-
-    to {
-
-        opacity: 1;
-
-        transform: translateY(0);
-    }
-}
-.hero-bets,
-.live-card {
-
-    margin-left: auto;
-
-    margin-right: auto;
-}
-
-/* ANALYTICS */
-.analytics-card {
-
-    min-width: 320px;
-    max-width: 500px;
-    margin: auto;
-
-}
-
-.analytics-chart-card {
-
-    width: 500px;
-    max-width: 90vw;
-    margin: auto;
-
-}
-
-.profit-text {
-
-    color: #00ff99;
-    text-shadow: 0 0 15px #00ff99;
-
-}
+/* TIER COLORS */
 
 .tier-low {
 
@@ -900,4 +499,61 @@ button:hover {
 
     text-shadow:
         0 0 12px #ff4dff;
+}
+
+/* ANIMATION */
+
+@keyframes fadeIn {
+
+    from {
+
+        opacity: 0;
+
+        transform: translateY(-10px);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform: translateY(0);
+    }
+}
+
+/* MOBILE */
+
+@media (max-width: 900px) {
+
+    .sidebar {
+
+        transform: translateX(-100%);
+
+        transition: 0.25s;
+    }
+
+    .sidebar.active {
+
+        transform: translateX(0);
+    }
+
+    .main,
+    .home-main {
+
+        margin-left: 0;
+
+        width: 100%;
+
+        padding: 20px;
+    }
+
+    .bets-container {
+
+        grid-template-columns:
+            repeat(auto-fit, minmax(160px, 1fr));
+    }
+
+    .menu-btn {
+
+        display: block;
+    }
 }
