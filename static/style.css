@@ -91,7 +91,7 @@ body {
 
 .sidebar h2 {
 
-    font-size: 30px;
+    font-size: 26px;
 
     font-weight: 900;
 
@@ -101,7 +101,13 @@ body {
 
     margin-bottom: 20px;
 
-    white-space: nowrap;
+    white-space: normal;
+
+    word-break: break-word;
+
+    overflow-wrap: break-word;
+
+    max-width: 100%;
 
     position: relative;
 
@@ -642,4 +648,31 @@ button:hover {
 
         display: block;
     }
+}
+
+.danger-btn {
+
+    background: #ff3b3b;
+
+    color: white;
+
+    border: none;
+
+    padding: 12px 18px;
+
+    border-radius: 10px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.25s;
+}
+
+.danger-btn:hover {
+
+    background: #ff5555;
+
+    box-shadow:
+        0 0 18px rgba(255,0,0,0.45);
 }
