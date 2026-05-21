@@ -689,9 +689,9 @@ button:hover {
 
     left: 12px;
 
-    z-index: 2000;
+    z-index: 3000;
 
-    background: #111;
+    background: rgba(0,0,0,0.92);
 
     color: #65ff72;
 
@@ -706,6 +706,8 @@ button:hover {
     font-weight: bold;
 
     cursor: pointer;
+
+    backdrop-filter: blur(8px);
 }
 
 @media (max-width: 900px) {
@@ -731,26 +733,7 @@ button:hover {
 
         transition: transform 0.25s ease;
 
-        z-index: 1500;
-
-        overflow-y: auto;
-
-        overflow-x: hidden;
-
-        background:
-            linear-gradient(
-                rgba(0,0,0,0.58),
-                rgba(0,0,0,0.76)
-            ),
-            url("/static/images/sidebar-bg.png");
-
-        background-size: cover;
-
-        background-position: center;
-
-        background-repeat: no-repeat;
-
-        backdrop-filter: blur(10px);
+        z-index: 2500;
     }
 
     .sidebar.active {
@@ -761,27 +744,10 @@ button:hover {
     .main,
     .home-main {
 
-        margin-left: 0;
+        margin-left: 0 !important;
 
-        width: 100%;
+        width: 100% !important;
 
-        background: transparent;
-
-        padding: 70px 12px 12px 12px;
-    }
-
-    .bets-container {
-
-        grid-template-columns:
-            repeat(auto-fit, minmax(140px, 1fr));
-
-        gap: 10px;
-    }
-
-    .live-card {
-
-        width: 100%;
-
-        padding: 20px;
+        padding: 70px 14px 14px 14px !important;
     }
 }
