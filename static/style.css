@@ -843,3 +843,34 @@ button:hover {
 
     margin-right: auto;
 }
+.tier-low {
+
+    color: #66ff99 !important;
+
+    text-shadow:
+        0 0 6px #66ff99;
+}
+
+.tier-mid {
+
+    color: #ffd447 !important;
+
+    text-shadow:
+        0 0 8px #ffd447;
+}
+
+.tier-high {
+
+    color: #ff9f43 !important;
+
+    text-shadow:
+        0 0 10px #ff9f43;
+}
+
+.tier-jackpot {
+
+    color: #ff4dff !important;
+
+    text-shadow:
+        0 0 12px #ff4dff;
+}
