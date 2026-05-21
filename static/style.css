@@ -38,7 +38,7 @@ body {
 
     left: 0;
 
-    width: 180px;
+    width: 190px;
 
     height: 100vh;
 
@@ -88,13 +88,14 @@ body {
 
     pointer-events: none;
 }
+
 .sidebar h2 {
 
     font-size: 28px;
 
     font-weight: 900;
 
-    line-height: 0.95;
+    line-height: 1;
 
     letter-spacing: -1px;
 
@@ -110,7 +111,6 @@ body {
 
     z-index: 2;
 }
-
 .sidebar h2 span {
 
     color: #65ff72;
@@ -124,29 +124,24 @@ body {
 
     align-items: center;
 
-    gap: 8px;
-
     color: #d8d8d8;
 
     text-decoration: none;
 
-    font-size: 10px;
+    font-size: 12px;
 
-    padding: 5px 8px;
+    padding: 4px 7px;
 
-    margin: 2px 0;
+    margin: 1px 0;
 
-    border-radius: 10px;
+    border-radius: 8px;
 
     transition: 0.25s;
 
-    position: relative;
-
-    line-height: 1.1;
+    line-height: 1;
 
     z-index: 2;
 }
-
 .sidebar a:hover {
 
     background:
@@ -168,7 +163,7 @@ body {
 
 .main {
 
-    margin-left: 180px;
+    margin-left: 190px;
 
     padding: 30px;
 
@@ -178,7 +173,7 @@ body {
 
     position: relative;
 
-    width: calc(100% - 180px);
+    width: calc(100% - 190px);
 
     max-width: 100%;
 }
@@ -196,9 +191,9 @@ body {
 
 .home-main {
 
-    margin-left: 180px;
+    margin-left: 190px;
 
-    width: calc(100% - 180px);
+    width: calc(100% - 190px);
 
     padding: 24px;
 
@@ -437,15 +432,17 @@ body {
     display: grid;
 
     grid-template-columns:
-        repeat(auto-fit, minmax(260px, 300px));
-
-    justify-content: flex-start;
+        repeat(auto-fit, minmax(200px, 240px));
 
     gap: 18px;
 
     width: 100%;
 
     align-items: start;
+
+    justify-items: center;
+
+    justify-content: center;
 }
 
 /* BET CARDS */
@@ -469,14 +466,13 @@ body {
 
     width: 100%;
 
-    min-width: 0;
-
     overflow: hidden;
 
     transition: 0.25s;
 
     box-sizing: border-box;
 }
+
 .bet-card:hover {
 
     transform: translateY(-4px);
