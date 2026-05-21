@@ -277,26 +277,20 @@ def settle_bet(bet_id):
 @app.route("/reset_leaderboard", methods=["POST"])
 def reset_leaderboard():
 
-    if "user" not in session:
-        return redirect("/login")
+    if not session.get("admin"):
+        return redirect(url_for("login"))
 
-    if session["user"] != "admin":
-        return "Unauthorized"
+    users = User.query.all()
 
-    conn = sqlite3.connect("database.db")
-    cursor = conn.cursor()
+    for user in users:
 
-    cursor.execute("""
-        UPDATE users
-        SET profit = 0,
-            wins = 0,
-            losses = 0
-    """)
+        user.profit = 0
+        user.bets_won = 0
+        user.bets_lost = 0
 
-    conn.commit()
-    conn.close()
+    db.session.commit()
 
-    return redirect("/leaderboard")
+    return redirect(url_for("leaderboard"))
 
 @app.route('/delete_bet/<int:bet_id>', methods=['POST'])
 def delete_bet(bet_id):
