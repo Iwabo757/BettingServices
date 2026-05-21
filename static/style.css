@@ -38,7 +38,7 @@ body {
 
     left: 0;
 
-    width: 200px;
+    width: 180px;
 
     height: 100vh;
 
@@ -91,7 +91,7 @@ body {
 
 .sidebar h2 {
 
-    font-size: 32px;
+    font-size: 30px;
 
     font-weight: 900;
 
@@ -99,7 +99,7 @@ body {
 
     letter-spacing: -1px;
 
-    margin-bottom: 22px;
+    margin-bottom: 20px;
 
     white-space: nowrap;
 
@@ -128,9 +128,9 @@ body {
 
     text-decoration: none;
 
-    font-size: 14px;
+    font-size: 15px;
 
-    padding: 6px 6px;
+    padding: 7px 6px;
 
     margin: 2px 0;
 
@@ -144,6 +144,7 @@ body {
 
     z-index: 2;
 }
+
 .sidebar a:hover {
 
     background:
@@ -165,9 +166,9 @@ body {
 
 .main {
 
-    margin-left: 200px;
+    margin-left: 180px;
 
-    width: calc(100% - 200px);
+    width: calc(100% - 180px);
 
     padding: 18px;
 
@@ -180,9 +181,9 @@ body {
 
 .home-main {
 
-    margin-left: 200px;
+    margin-left: 180px;
 
-    width: calc(100% - 200px);
+    width: calc(100% - 180px);
 
     padding: 24px;
 
@@ -247,13 +248,13 @@ body {
     display: grid;
 
     grid-template-columns:
-        repeat(auto-fill, minmax(200px, 1fr));
+        repeat(auto-fill, minmax(175px, 1fr));
 
-    gap: 14px;
+    gap: 12px;
 
     width: 100%;
 
-    max-width: 1400px;
+    max-width: 1600px;
 
     margin: 0 auto;
 
@@ -270,7 +271,7 @@ body {
 
     border-radius: 18px;
 
-    padding: 8px;
+    padding: 6px;
 
     text-align: center;
 
@@ -280,10 +281,6 @@ body {
         0 0 20px rgba(0,0,0,0.45);
 
     width: 100%;
-
-    max-width: 220px;
-
-    margin: 0 auto;
 
     min-width: 0;
 
@@ -309,13 +306,13 @@ body {
 
 .bet-card img {
 
-    max-width: 64px;
+    max-width: 52px;
 
     width: 100%;
 
     height: auto;
 
-    margin: 14px auto;
+    margin: 12px auto;
 
     filter:
         drop-shadow(0 0 18px rgba(101,255,114,0.35));
@@ -323,18 +320,18 @@ body {
 
 .bet-card h2 {
 
-    font-size: 16px;
+    font-size: 15px;
 
-    margin-bottom: 10px;
+    margin-bottom: 8px;
 
     color: white;
 }
 
 .bet-card p {
 
-    font-size: 12px;
+    font-size: 11px;
 
-    line-height: 1.4;
+    line-height: 1.35;
 
     color: #e8e8e8;
 }
@@ -408,9 +405,9 @@ button:hover {
 
     width: 100%;
 
-    padding: 12px;
+    padding: 10px;
 
-    margin-top: 20px;
+    margin-top: 16px;
 
     background: #111;
 
@@ -425,6 +422,8 @@ button:hover {
     cursor: pointer;
 
     transition: 0.3s;
+
+    font-size: 12px;
 }
 
 .payout-toggle:hover {
@@ -436,26 +435,18 @@ button:hover {
 
 .payout-content {
 
-    display: none;
-
-    margin-top: 20px;
-
-    animation: fadeIn 0.3s ease;
-}
-
-.payout-content.active {
-
-.payout-content {
-
     max-height: 0;
 
     overflow: hidden;
 
     opacity: 0;
 
+    margin-top: 0;
+
     transition:
         max-height 0.35s ease,
-        opacity 0.25s ease;
+        opacity 0.25s ease,
+        margin-top 0.25s ease;
 }
 
 .payout-content.active {
@@ -463,8 +454,8 @@ button:hover {
     max-height: 2000px;
 
     opacity: 1;
-}
-    display: block;
+
+    margin-top: 20px;
 }
 
 /* TIER COLORS */
