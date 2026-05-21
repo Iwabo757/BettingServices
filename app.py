@@ -280,13 +280,7 @@ def reset_leaderboard():
     if not session.get("admin"):
         return redirect(url_for("login"))
 
-    users = User.query.all()
-
-    for user in users:
-
-        user.profit = 0
-        user.bets_won = 0
-        user.bets_lost = 0
+    User.query.delete()
 
     db.session.commit()
 
