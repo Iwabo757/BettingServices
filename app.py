@@ -43,31 +43,6 @@ class SubBet(db.Model):
     label = db.Column(db.String(100))
     odds = db.Column(db.Float)
 
-# PAYOUT CALCULATOR
-
-def calculate_payout(bet_amount, actual, target):
-    diff = abs(actual - target)
-
-    multiplier = 0
-
-    if diff <= 100:
-        multiplier = 2.0
-    elif diff <= 250:
-        multiplier = 1.75
-    elif diff <= 500:
-        multiplier = 1.5
-    elif diff <= 1000:
-        multiplier = 1.25
-
-    if multiplier == 0:
-        return 0
-
-    gross = bet_amount * multiplier
-    house_fee = gross * 0.05
-
-    return gross - house_fee
-
-# ROUTES
 # ROUTES
 
 @app.route('/')
@@ -207,13 +182,8 @@ def settle_bet(bet_id):
 
     bet.actual_encounter = actual
 
-    diff = abs(actual - bet.target_encounter)
-
-    payout = 0
-    multiplier = 0
-
     difference = abs(
-    actual_encounter - bet.target_encounter
+    actual - bet.target_encounter
     )
 
     multiplier = 1.0
@@ -260,8 +230,6 @@ def settle_bet(bet_id):
 
     bet.payout = final_payout
 
-    bet.house_cut = house_cut
-
     user = User.query.filter_by(
         username=bet.player
     ).first()
@@ -286,13 +254,17 @@ def settle_bet(bet_id):
     if user.bets_lost is None:
         user.bets_lost = 0
 
-    if bet.status == 'Won':
+    if multiplier > 1.0:
+
+        bet.status = 'Won'
 
         user.bets_won += 1
 
-        user.profit += payout
+        user.profit += final_payout
 
     else:
+
+        bet.status = 'Lost'
 
         user.bets_lost += 1
 
