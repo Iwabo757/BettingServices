@@ -11,9 +11,9 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres.ebxdbkmnchebkbhih
 
 import os
 
-app.config["DISCORD_CLIENT_ID"] = os.getenv("1507877963469947100")
+app.config["DISCORD_CLIENT_ID"] = os.getenv("DISCORD_CLIENT_ID")
 
-app.config["DISCORD_CLIENT_SECRET"] = os.getenv("tdSeYVgRfUmjbKIE1TGlCZ5EPYZEl7wu")
+app.config["DISCORD_CLIENT_SECRET"] = os.getenv("DISCORD_CLIENT_SECRET")
 
 app.config["DISCORD_REDIRECT_URI"] = "https://fateshinybets.onrender.com/callback"
 
