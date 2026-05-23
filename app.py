@@ -1,5 +1,7 @@
 from flask import Flask, render_template, request, redirect, url_for, session
 from flask_sqlalchemy import SQLAlchemy
+from flask_discord import DiscordOAuth2Session
+from flask_discord import requires_authorization
 
 app = Flask(__name__)
 
@@ -7,9 +9,27 @@ app.config['SECRET_KEY'] = 'supersecretkey'
 
 app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres.ebxdbkmnchebkbhihebr:C7SryYAIB9Lpo4rN@aws-1-us-east-1.pooler.supabase.com:6543/postgres'
 
+import os
+
+app.config["DISCORD_CLIENT_ID"] = os.getenv("1507877963469947100")
+
+app.config["DISCORD_CLIENT_SECRET"] = os.getenv("tdSeYVgRfUmjbKIE1TGlCZ5EPYZEl7wu")
+
+app.config["DISCORD_REDIRECT_URI"] = "https://fateshinybets.onrender.com/callback"
+
+ALLOWED_USERS = [
+    422820286258348045,#Neko
+    1410826832802091018,#Luni
+    748722952828223548,#jacobski
+    633853995093590017,#Iwabo
+    357123427565436939 #GreggznLXIX
+]
+
 # DATABASE
 
 db = SQLAlchemy(app)
+
+discord = DiscordOAuth2Session(app)
 
 # MODELS
 
@@ -44,6 +64,29 @@ class SubBet(db.Model):
     odds = db.Column(db.Float)
 
 # ROUTES
+
+@app.route("/discord")
+def discord_login():
+
+    return discord.create_session(
+        scope=["identify"]
+    )
+
+@app.route("/callback")
+def callback():
+
+    discord.callback()
+
+    user = discord.fetch_user()
+
+    if int(user.id) not in ALLOWED_USERS:
+        return "You are not authorized."
+
+    session["discord_user"] = user.name
+
+    session["admin"] = True
+
+    return redirect(url_for("admin"))
 
 @app.route('/')
 def home():
